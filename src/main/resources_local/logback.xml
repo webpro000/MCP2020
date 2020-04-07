@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!-- console로 log 남기기 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                ▶ %-5level %d{HH:mm:ss.SSS} [%thread] %logger[%method:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- file로 log 남기기 -->
+     <!-- local-->
+     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:\\CARPAY\\log\\HPAY_ICPS_debug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>C:\\CARPAY\\log\\HPAY_ICPS_debug.%d{yyyy-MM-dd}.log</fileNamePattern>            
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                ▷ %-5level %d{HH:mm:ss} %logger[%method:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="fileServer" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:\\CARPAY\\log\\HPAY_ICPS.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>C:\\CARPAY\\log\\HPAY_ICPS_%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                ▷ %-5level %d{HH:mm:ss} %logger[%method:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+         
+    <!-- 이 아래에 있는 애들 다 log로 찍겠다. -->
+    <logger name="org.springframework" level="info" />
+       
+    <logger name="com.hpay" level="info">
+        <appender-ref ref="fileServer" />
+    </logger>
+    
+    <root level="debug">
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>    
+</configuration>

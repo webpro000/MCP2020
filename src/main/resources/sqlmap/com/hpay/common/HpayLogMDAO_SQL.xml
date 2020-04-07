@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hpay.common.service.dao.HpayLogMDAO">
+    <select id="selectMaxTodayWorkSeq" parameterType="com.hpay.common.vo.HpayLogVO" resultType="Integer" >
+    <![CDATA[
+        select 
+            coalesce(max(task_seq), 0) 
+        from 
+            hpay_log 
+        where interface_code=#{interface_code} and now()-start_date-start_time > cast(' 5 second ' as interval);
+    ]]>  
+    </select>
+
+    <select id="selectStandbyOrder" parameterType="com.hpay.common.vo.HpayLogVO" resultType="String" >
+    <![CDATA[
+        select 
+            task_uuid
+        from 
+            hpay_log 
+        where 
+            interface_code=#{interface_code} and task_seq=#{task_seq} and status_code  in ('standby', 'active')
+        order by 
+            hpay_log_seq asc 
+        limit 1;
+    ]]>  
+    </select>
+
+    <select id="insertHpayLog" parameterType="com.hpay.common.vo.HpayLogVO" resultType="Integer" >
+    <![CDATA[
+    
+        INSERT INTO public.hpay_log (
+            interface_code, start_date, start_time, end_date, end_time
+            , elapsed_ms, host_type, host, target_type, target
+            , data_count_total, data_count_success, data_count_fail, status_code, task_seq
+            , task_uuid, method, error_code, error_msg
+        ) VALUES(
+            #{interface_code}, #{start_date}, #{start_date}, #{end_date}, #{end_date}
+            , #{elapsed_ms}, #{host_type}, #{host}, #{target_type}, #{target}
+            , #{data_count_total}, #{data_count_success}, #{data_count_fail}, #{status_code}, #{task_seq}
+            , #{task_uuid}, #{method}, #{error_code}, #{error_msg} 
+        ) returning hpay_log_seq
+    ]]>  
+    </select>
+
+    <update id="updateHpayLog" parameterType="com.hpay.common.vo.HpayLogVO" >
+    <![CDATA[
+        UPDATE public.hpay_log 
+        SET 
+            interface_code=#{interface_code}
+            , start_date=#{start_date}
+            , start_time=#{start_date}
+            , end_date=#{end_date}
+            , end_time=#{end_date}
+            , elapsed_ms=#{elapsed_ms}
+            , host_type=#{host_type}
+            , host=#{host}
+            , target_type=#{target_type}
+            , target=#{target}
+            , data_count_total=#{data_count_total}
+            , data_count_success=#{data_count_success}
+            , data_count_fail=#{data_count_fail}
+            , status_code=#{status_code}
+            , method=#{method}
+            , error_code=#{error_code}
+            , error_msg=#{error_msg}
+        WHERE hpay_log_seq=#{hpay_log_seq};
+    ]]>  
+    </update>
+</mapper>

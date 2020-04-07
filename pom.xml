@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>MCP2020</groupId>
+    <artifactId>MCP2020</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.0</version>
+    <name>MCP2020</name>
+    <url>https://github.com/webpro000/MCP2020.git</url>
+    <organization>
+        <name>MCP2020 Dev Group</name>
+        <!-- 
+        <url>http://localhost:8080/MCP2020</url>
+        <logo>http://localhost:8080/MCP2020/logo.jpg</logo>
+         -->
+    </organization>
+    
+    <description>Description of MCP2020</description>
+    <parent>
+        <groupId>able.com</groupId>
+        <artifactId>able-pom-parent</artifactId>
+        <version>2.0.0</version> 
+    </parent> 
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <env>test</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>local</id>
+            <properties>
+                <env>local</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <env>prod</env>
+            </properties>
+        </profile>
+    </profiles>
+    <dependencies>
+        <!-- able-core -->
+        <dependency>
+            <groupId>able</groupId>
+            <artifactId>able-core</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+		
+		<!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.5.jre7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.4</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources_${env}</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <!-- <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>src/main/resources_${env}/web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins> -->
+        <finalName>MCP2020</finalName>       
+    </build>
+</project>

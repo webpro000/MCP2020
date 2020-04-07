@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    SQL File Name : basic_DeltaMDAO_SQL.xml 
+    Description : 2주 정업데이터를 관리한다.(등록, 수정, 삭제 및 조회)
+
+    Modification Information 
+     since          author              description
+   ===========    =============    ===========================
+   2019. 4. 23.     O1484     	최초 생성
+ -->
+ 
+<mapper namespace="com.hpay.icps.service.dao.StoreDeletedMDAO">
+
+    <insert id="insertArrStoreDeleted" parameterType="java.util.List"  >
+        INSERT INTO public.hpay_store_delete (
+            hpay_store_delete_package_seq, poi_id, store_id
+        ) VALUES
+        <foreach collection="list" item="element"  index="index" separator=" , "  >
+            (#{element.hpay_store_delete_package_seq}, #{element.poi_id}, #{element.store_id})
+        </foreach>
+    </insert>
+        <select id="insertStoreDeletedPackage" parameterType="com.hpay.icps.vo.StoreDeletedPackageVO" resultType="Integer" >
+    <![CDATA[
+        INSERT INTO public.hpay_store_delete_package (
+            format_version, data_version_delta, data_version, interface_code, work_date
+            , work_date_seq, initiate_code, binary_delete, reqdeletestoredate
+        ) VALUES(
+            #{format_version}, #{data_version_delta}, #{data_version}, #{interface_code}, #{work_date}
+            , #{work_date_seq}, #{initiate_code}, #{binary_delete}, #{reqDeleteStoreDate}
+        ) returning hpay_store_delete_package_seq;
+    ]]>  
+    </select>
+    <update id="updateStoreDeletedPackage" parameterType="com.hpay.icps.vo.StoreDeletedPackageVO" >
+    <![CDATA[
+        UPDATE public.hpay_store_delete_package 
+        SET 
+            format_version=#{format_version}
+            , data_version_delta=#{data_version_delta}
+            , data_version=#{data_version}
+            , interface_code=#{interface_code}
+            , work_date=#{work_date}
+            , work_date_seq=#{work_date_seq}
+            , initiate_code=#{initiate_code}
+            , binary_delete=#{binary_delete} 
+        WHERE hpay_store_delete_package_seq=#{hpay_store_delete_package_seq};
+    ]]>  
+    </update>
+    
+
+   <select id="selectTodayLastSeq" resultType="String" parameterType="String" >
+    <![CDATA[
+        select work_date_seq
+        from public.hpay_store_delete_package 
+        where interface_code=#{interface_code} and work_date=#{work_date}
+        order by work_date_seq desc
+        limit 1;
+    ]]>
+    </select>    
+
+
+    <resultMap type="com.hpay.icps.vo.StoreDeletedPackageVO" id="storeDeletedPackage" >
+        <result property="hpay_store_delete_package_seq" column="hpay_store_delete_package_seq"/>
+        <result property="format_version" column="format_version"/>
+        <result property="data_version_delta" column="data_version_delta"/>
+        <result property="data_version" column="data_version"/>
+        <result property="interface_code" column="interface_code"/>
+        <result property="work_date" column="work_date"/>
+        <result property="work_date_seq" column="work_date_seq"/>
+        <result property="initiate_code" column="initiate_code"/>
+        <result property="binary_delete" column="binary_delete"/>
+    </resultMap>
+
+    <select id="selectTodayIniticatedBinaryPackage" resultMap="storeDeletedPackage"   >
+    <![CDATA[
+        select 
+            hpay_store_delete_package_seq, format_version, data_version_delta, data_version, interface_code
+            , work_date, work_date_seq, initiate_code, binary_delete
+        from 
+            hpay_store_delete_package 
+        where 
+            data_version=to_char(current_date, 'YYYYMMDD')
+        order by 
+            hpay_store_delete_package_seq desc 
+        limit 1;
+    ]]>      
+    </select>
+
+   <select id="selectLastInitiatedDeletedPackage" resultMap="storeDeletedPackage"  parameterType="String">
+    <![CDATA[
+        select 
+            hpay_store_delete_package_seq, format_version, data_version_delta, data_version, interface_code
+            , work_date, work_date_seq, initiate_code, binary_delete
+        from 
+            hpay_store_delete_package 
+        where 
+            data_version_delta=#{data_version_delta} 
+            and interface_code in ('hpayDelStoreInitSend', 'hpayProvidDayDelSend') 
+        order by 
+            hpay_store_delete_package_seq desc 
+        limit 1;
+    ]]>
+    </select>    
+
+   <select id="selectLastDeletedBinary" resultMap="storeDeletedPackage"  >
+    <![CDATA[
+        select 
+            hpay_store_delete_package_seq, format_version, data_version_delta, data_version, interface_code, work_date, work_date_seq, initiate_code, binary_delete, added_date, added_time 
+        from 
+            hpay_store_delete_package 
+        where interface_code='hpayDelStoreInitSend' 
+        order by hpay_store_delete_package_seq desc limit 1;
+    ]]>
+    </select>    
+    
+    
+      <resultMap type="com.hpay.icps.vo.StoreDeletedVO" id="arrVOStoreDetail_deleted" >
+        <result property="poiId" column="poiId"/>
+        <result property="storeId" column="storeId"/>        
+    </resultMap>
+
+     <select id="selectStoreDeleted_byId" resultMap="arrVOStoreDetail_deleted" parameterType="Integer" >
+    <![CDATA[
+        select poi_id, store_id 
+        from 
+            hpay_store_delete 
+        where hpay_store_delete_package_seq =#{hpay_store_delete_package_seq};
+    ]]>             
+    </select>
+        
+     <select id="searchStoreDelete" resultMap="arrVOStoreDetail_deleted" parameterType="String" >
+    <![CDATA[
+        SELECT  D.poi_id, D.store_id 
+        FROM (
+                SELECT F.LOAD_DATE||F.LOAD_SEQ||F.LOAD_SRC TARGET 
+                FROM 
+                    (
+                    SELECT PROVIDE_DATE ,  PROVIDE_SERVICE, MAX(PROVIDE_SEQ) PROVIDE_SEQ
+                    FROM HPAY_SERVICE_PROVIDE_VERSION
+                    WHERE PROVIDE_SERVICE ='PARK'
+                    AND PROVIDE_DATE = (  SELECT MAX(D.PROVIDE_DATE) PROVIDE_DATE FROM HPAY_SERVICE_PROVIDE_VERSION D 
+                                           WHERE D.PROVIDE_SERVICE ='PARK' )
+                    GROUP BY PROVIDE_DATE, PROVIDE_SERVICE
+                    ) E, HPAY_SERVICE_PROVIDE_VERSION_DETAIL F
+                WHERE E.PROVIDE_DATE = F.PROVIDE_DATE
+                AND E.PROVIDE_SEQ = F.PROVIDE_SEQ
+                AND E.PROVIDE_SERVICE = F.PROVIDE_SERVICE
+                AND F.PROVIDE_SERVICE='PARK'
+            ) B  
+            JOIN  hpay_park_list A ON A.work_date = SUBSTRING(B.TARGET,1,8) AND A.work_date_seq = SUBSTRING(B.TARGET,9,3) AND A.src = SUBSTRING(B.TARGET,12) 
+            JOIN hpay_store_delta D on A.src=D.src and A.park_category=D.park_category and  A.park_seq=D.store_id
+        WHERE A.incarpayment_use_yn<>'1' and D.data_version=#{data_version}
+        UNION
+        SELECT  D.poi_id, D.store_id
+        FROM  (
+                SELECT F.LOAD_DATE||F.LOAD_SEQ||F.LOAD_SRC TARGET 
+                FROM 
+                    (
+                    SELECT PROVIDE_DATE ,  PROVIDE_SERVICE, MAX(PROVIDE_SEQ) PROVIDE_SEQ
+                    FROM HPAY_SERVICE_PROVIDE_VERSION
+                    WHERE PROVIDE_SERVICE ='GAS'
+                    AND PROVIDE_DATE = (  SELECT MAX(D.PROVIDE_DATE) PROVIDE_DATE FROM HPAY_SERVICE_PROVIDE_VERSION D 
+                                           WHERE D.PROVIDE_SERVICE ='GAS' )
+                    GROUP BY PROVIDE_DATE, PROVIDE_SERVICE
+                    ) E, HPAY_SERVICE_PROVIDE_VERSION_DETAIL F
+                WHERE E.PROVIDE_DATE = F.PROVIDE_DATE
+                AND E.PROVIDE_SEQ = F.PROVIDE_SEQ
+                AND E.PROVIDE_SERVICE = F.PROVIDE_SERVICE
+                AND F.PROVIDE_SERVICE='GAS'
+            ) C  
+            JOIN  HPAY_GAS_STATION_PACKAGE B ON B.REGDATE = SUBSTRING(C.TARGET,1,8) AND B.REGDATESEQ = SUBSTRING(C.TARGET,9,3) AND B.SRC = SUBSTRING(C.TARGET,12)
+            JOIN  HPAY_GAS_STATION A ON A.REGDATE = B.REGDATE AND A.REGDATESEQ = B.REGDATESEQ        
+            JOIN hpay_store_delta D on B.src=D.src and A.STATIONID=D.store_id
+        WHERE A.HPAY='N' and D.data_version=#{data_version};
+    ]]>             
+    </select>
+
+    <!-- 이슈 : org : work_date GTEQ req_delete_store_date   order by work_date asc --> 
+    <select id="selectRelatedDeltaVersion" parameterType="String" resultType="String" >
+    <![CDATA[
+        SELECT data_version_delta
+        FROM public.hpay_store_delete_package 
+        where interface_code='hpayDelStoreSend' and work_date <= #{req_delete_store_date} 
+        order by work_date desc , work_date_seq desc 
+        limit 1;
+    ]]>  
+    </select>
+    
+    <update id="updateStoreDelta_DeletedDate" parameterType="String" >
+    <![CDATA[
+        UPDATE public.hpay_store_delta
+        SET date_deleted=#{date_deleted} 
+        WHERE poi_id=#{poi_id} AND data_version=#{data_version} and date_deleted is null;
+    ]]>      
+    </update>
+    
+
+</mapper>

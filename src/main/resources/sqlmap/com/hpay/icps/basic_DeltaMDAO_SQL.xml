@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    SQL File Name : basic_DeltaMDAO_SQL.xml 
+    Description : 2주 정업데이터를 관리한다.(등록, 수정, 삭제 및 조회)
+
+    Modification Information 
+     since          author              description
+   ===========    =============    ===========================
+   2019. 4. 23.     O1484     	최초 생성
+ -->
+<mapper namespace="com.hpay.icps.service.dao.DeltaMDAO">
+
+    <select id="selectDataVersion_LastDelta" resultType="String" >
+    <![CDATA[
+        SELECT hpay_store_delta_package.data_version 
+        FROM hpay_store_delta_package 
+        ORDER BY hpay_store_delta_package.added_date DESC, hpay_store_delta_package.added_time DESC 
+        LIMIT 1 
+    ]]>
+    </select>
+     
+    <delete id="deleteAleadyDelta" >
+        delete from hpay_store_delta where data_version=#{dataVersion};
+    </delete>    
+   
+    <insert id="insertArrHpayStoreDelta" parameterType="java.util.List"  >
+        INSERT INTO public.hpay_store_delta (
+            poi_id, poi_code, poi_code_description, f_name
+            , store_name, station_phone, src, park_category
+            , address, san_bun, primary_bun, secondary_bun, address_str
+            , lat, lon, store_id, refer_id, self_type
+            , parcel_id_7lv, data_version            
+            , poi_code_description_eng, f_name_eng, store_name_eng, address_eng, address_str_eng            
+        ) VALUES
+        <foreach collection="list" item="element"  index="index" separator=" , "  >
+            (
+                #{element.poiId}, #{element.poiCode}, #{element.poiCodeDesc}, #{element.fName}
+                , #{element.storeName}, #{element.stationPhone}, #{element.src}, #{element.parkCategory}
+                , #{element.address}, #{element.sanBun}, #{element.primaryBun}, #{element.secondaryBun}, #{element.addressStr}
+                , #{element.lat}, #{element.lon}, #{element.storeId}, #{element.referId}, #{element.selfType}
+                , #{element.parcelId7lv}, #{element.dataVersion}
+                , #{element.poiCodeDesc_eng}, #{element.fName_eng}, #{element.storeName_eng}, #{element.address_eng}, #{element.addressStr_eng}
+            )
+        </foreach>
+    </insert>
+        
+    <insert id="insertHpayStoreDeltaPackage" parameterType="com.hpay.icps.vo.HpayStoreDeltaPackageVO" >
+    <![CDATA[
+        INSERT INTO public.hpay_store_delta_package (
+            format_version, data_version, binary_2w 
+        ) VALUES(
+            #{formatVersion}, #{dataVersion}, #{binary2W}
+        )
+    ]]>  
+    </insert>
+    
+    
+    <resultMap id="hpayStoreDeltaPackage" type="com.hpay.icps.vo.HpayStoreDeltaPackageVO">
+        <result property="formatVersion" column="format_version"/>
+        <result property="dataVersion" column="data_version"/>
+        <result property="binary2W" column="binary_2w"/>
+    </resultMap>
+
+    <select id="selectHpayStoreDeltaPackage" resultMap="hpayStoreDeltaPackage">
+    <![CDATA[
+        SELECT format_version, data_version, binary_2w
+        FROM public.hpay_store_delta_package 
+        WHERE data_version=#{dataVersion} 
+        ORDER BY hpay_store_delta_package.added_date DESC, hpay_store_delta_package.added_time DESC 
+        limit 1;
+    ]]>
+    </select>
+
+    
+    <resultMap id="StoreDetail" type="com.hpay.icps.vo.StoreDetailVO">
+        <result property="poiId" column="poi_id"/>
+        <result property="poiCode" column="poi_code"/>
+        <result property="poiCodeDesc" column="poi_code_description"/>
+        <result property="fName" column="f_name"/>
+        <result property="storeName" column="store_name"/>
+        <result property="stationPhone" column="station_phone"/>
+        <result property="src" column="src"/>
+        <result property="parkCategory" column="park_category"/>
+        <result property="address" column="address"/>
+        <result property="sanBun" column="san_bun"/>
+        <result property="primaryBun" column="primary_bun"/>
+        <result property="secondaryBun" column="secondary_bun"/>
+        <result property="addressStr" column="address_str"/>
+        <result property="lat" column="lat"/>
+        <result property="lon" column="lon"/>
+        <result property="storeId" column="store_id"/>
+        <result property="referId" column="refer_id"/>
+        <result property="selfType" column="self_type"/>
+        <result property="parcelId7lv" column="parcel_id_7lv"/>
+        <result property="dataVersion" column="data_version"/>
+
+        <result property="poiCodeDesc_eng" column="poi_code_description_eng" />
+        <result property="fName_eng" column="f_name_eng" />
+        <result property="storeName_eng" column="store_name_eng" />
+        <result property="address_eng" column="address_eng" />
+        <result property="addressStr_eng" column="address_str_eng" />
+
+    </resultMap >
+
+    <select id="selectArrHpayStoreDelta" resultMap="StoreDetail">
+    <![CDATA[
+        SELECT 
+            poi_id, poi_code, poi_code_description, f_name, store_name, station_phone
+            , src, park_category, address, san_bun, primary_bun, secondary_bun, address_str
+            , lat, lon, store_id, refer_id, self_type
+            , parcel_id_7lv, data_version
+            , poi_code_description_eng, f_name_eng, store_name_eng, address_eng, address_str_eng            
+        FROM public.hpay_store_delta 
+        WHERE data_version=#{dataVersion} 
+    ]]>
+    </select>
+</mapper>

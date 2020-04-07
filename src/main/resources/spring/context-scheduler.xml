@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+            xmlns:context="http://www.springframework.org/schema/context" 
+            xmlns:p="http://www.springframework.org/schema/p" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mvc="http://www.springframework.org/schema/mvc"    
+            xmlns:task="http://www.springframework.org/schema/task"             
+            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd         
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+             http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+    <bean id="collectFileInfoScheduler" class="com.hpay.icps.web.ScheduledTask" />
+<!-- 
+    <task:scheduler id="gsScheduler" pool-size="10" />
+    <task:executor id="gsTaskExecutor" pool-size="10" />
+    <task:annotation-driven executor="gsTaskExecutor" scheduler="gsScheduler" />
+    
+    <task:scheduled-tasks scheduler="gsScheduler">
+    
+    
+        매 분 0초에 실행 각 실행마다 인터벌이 60초
+        이 내용을 icps.properties  넣어야함 
+            <task:scheduled ref="collectFileInfoScheduler" method="hpayDelStoreSend" cron="0 0 * * * ?"  />
+        <task:scheduled ref="collectFileInfoScheduler" method="hpayDelStoreSend" cron="*/20 * * * * ?"  />
+       
+        ONESUN 품확기간동안막아놓기
+        <task:scheduled ref="collectFileInfoScheduler" method="hpayDelStoreSend" cron="0 0 4 * * ?"  />
+    </task:scheduled-tasks>        -->
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    SQL File Name : basic_CertMDAO_SQL.xml 
+    Description : 인증 데이터를 관리한다.(등록, 수정, 삭제 및 조회)
+
+    Modification Information 
+     since          author              description
+   ===========    =============    ===========================
+   2019. 4. 23.     O1484     	최초 생성
+ -->
+<mapper namespace="com.hpay.icps.service.dao.HpayStoreAddedMDAO">
+
+    <!-- resultMap id="certvo" type="com.hpay.certification.vo.CertVO">
+        <result property="certSeq" column="cert_seq"/>
+        <result property="dateStart" column="date_start"/>
+        <result property="dateEnd" column="date_end"/>
+    </resultMap -->
+
+    <!-- 
+        Query ID : insertCertAccessLog
+        Description : CertKey 등록
+        parameterType="com.hpay.hmns.vo.HpayStoreDetailVO"
+     -->
+    <insert id="insertArrHpayStoreAdded" parameterType="java.util.List"  >
+        INSERT INTO public.hpay_store_added
+        (req_date, poi_id, store_id, start_date)
+        VALUES
+        <foreach collection="list" item="element"  index="index" separator=" , "  >
+            (#{element.reqDate}, #{element.poiId}, #{element.storeId}, #{element.startDate})
+        </foreach>
+    </insert>    
+</mapper>
