@@ -1,0 +1,27 @@
+----- 설치파일 : postgresql-10.12-2-windows-x64-binaries.zip -----
+------------------------------------------------------------
+1. UnZIP : C:\postgresql-10.12
+
+2. C:\postgresql-10.12\data 데이터 폴더 만들기
+
+3. bin> initdb.exe -U postgres -A password -E utf8 -W -D C:\postgresql-10.12\data
+    : postgres/admin
+    
+서비스 시작
+4. 
+    ~>bin>pg_ctl -D ^"C^:^\postgresql^-10^.12^\data^" -l logfile start
+4-1. 
+    ~>bin>pg_ctl -D ^"C^:^\postgresql^-10^.12^\data^" -l logfile stop
+
+
+5. Client 툴 접속
+    ~>pgAdmin 4>bin>pgAdmin4.exe
+
+6. 로컬서버 접속 및 작업
+    >Create>Server...
+    >Create>Table....
+    ---------------------------------------------------
+    insert into public."Test01"(num,name,age,regdt)
+    values('2','aaa2',20, now());
+    
+    select * from public."Test01"
