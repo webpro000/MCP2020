@@ -1,0 +1,51 @@
+1. pg_ctl -D ^"C^:^\pgsql\data^" -l logfile start
+
+2. 설치폴더에 start.bat / stop.bat 만들기
+
+3. Database에서 오른쪽 마우스... Create > Database DB명: hpay
+
+4. create user hpay with password 'hpay1!';
+
+5. grant all privileges on database hpay to hpay;
+
+6. "hpay" DB 에 유저... hpay/hpay1! 만들고, 다시 hpay db에 권환 부여됨.
+
+7. 왼쪽 맨 위의 server에서 Create - > Server 실행
+
+8. Local_hpay라고 지음
+
+9. localhost
+   5432
+   hpay
+   hpay1!
+	save 함
+
+10. 새로 접속한 Connection에서 신규 쿼리 팡 열고... Tools > Query Tool
+
+11. CREATE SEQUENCE public.seq_hpay_log_seq
+     INCREMENT 1
+     START 1
+
+12. ALTER SEQUENCE public.seq_hpay_log_seq OWNER TO hpay;
+
+13. 테이블은 파일 서버에서 다운
+
+14. 파일서버 ~\tool  바로 위에.. 99_기타>개인폴더>이한준>hpay_log_테이블.txt 열어서 실행
+
+15. PGADMIN에 복붙여넣기 및 실행
+
+16 SELECT * FROM  public.hpay_log 해서 테이블을 확인해봄
+
+18. ABLE_FRAME 열어서 기존 프로젝트에 com.hpay.test3.web (예시) 패키지를 생성함.
+
+19. 위의 파일서버 경로에 저장해둔 PosgreSqlTestController 를 적용
+
+20 만든 테이블은 VO보고 역으로 유추해서 만든것임. 개발계 접속되면 수정 OR 재생성 하여서 작업
+
+21. context-datasource.xml의 정보를 LOCAL의 HSQL로 정보로 변경함
+
+22. PGADMIN 에서 SELECT로 확인함
+
+
+
+
