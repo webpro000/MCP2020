@@ -2,6 +2,7 @@ package com.hpay.common.service.impl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import able.com.service.HService;
 import able.com.service.prop.PropertyService;
@@ -99,5 +100,19 @@ public class ConnRedisServiceImpl extends HService implements ConnRedisService {
         Map<String, String> inRedis = jedis.hgetAll(key);
         close();        
         return inRedis;
+    }
+    
+    @Override
+    public void delAll(int dbNum,  String key ){
+        open(dbNum);
+        
+        // 전체 지우기(Redis) 
+        String keysPattern =key+"*";
+        Set<String> keys = jedis.keys(keysPattern);
+        if(!keys.isEmpty()) {
+            jedis.del(keys.toArray(new String[keys.size()]));
+        }        
+        
+        close();
     }
 }

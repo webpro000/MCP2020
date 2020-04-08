@@ -6,7 +6,9 @@
         <property name="extFileName">
              <set>
                  <!-- WEB-INF 내 의 파일일 경우 classpath 사용 -->
-                <value>classpath:/properties/icps.properties</value>             
+                 <value>classpath:/properties/airparking.properties</value> 
+                <value>classpath:/properties/icps.properties</value>   
+                                
              </set>
         </property>
     </bean>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    SQL File Name : park_ParkListDAO_SQL.xml 
+    Description : Park Use Count 재차대수 데이터를 관리한다.(등록, 수정, 삭제 및 조회)
+
+    Modification Information 
+       수정일      수정자    Version      Query Id
+    ==========  =======  ========   ==============
+    2019.12.04  ONESUN   1.0         최초 생성 
+-->
+<mapper namespace="com.hpay.airparking.service.dao.AirParkingMDAO">
+    
+    <resultMap id="AirCollectHistoryVO" type="com.hpay.airparking.vo.AirCollectHistoryVO">
+        <result property="workDate" column="workDate"/> 
+        <result property="workDateSeq" column="workDateSeq"/> 
+        <result property="result" column="result_cd"/> 
+        <result property="resultMessage" column="result_message"/> 
+    </resultMap>
+    
+    <!-- 
+        Park List 전체  select 
+     -->
+    <select id="selectWorkDateSeqParkListUseCount"  resultMap="AirCollectHistoryVO">
+    <![CDATA[
+        SELECT to_char(now(),'YYYYMMDD') workDate, lpad(text(to_number(COALESCE(max(work_date_seq),'000'),'999')+1) ,3,'0') workDateSeq
+        FROM hpay_park_list_use_count_history_air
+        WHERE work_date = to_char(now(),'YYYYMMDD')
+    ]]>             
+    </select>
+    
+    <insert id="insertAllParkUseCountHistory" parameterType="com.hpay.airparking.vo.AirCollectHistoryVO">
+    <![CDATA[       
+         INSERT INTO hpay_park_list_use_count_history_air
+        (
+            work_date, work_date_seq, src, result_cd, result_message, insert_date 
+        )
+        VALUES(       
+                #{workDate}, #{workDateSeq}, #{src},
+                #{result}, #{resultMessage}, (to_char(now(),'YYYYMMDDHH24MISS'))
+        )
+    ]]>
+    </insert>
+    
+    <delete id="deleteAllParkUseCount_Air" >
+    <![CDATA[
+        DELETE FROM hpay_park_list_use_count_air
+    ]]>
+    </delete>
+     <select id="selectParkToalNum"  parameterType="String" resultType="String">
+    <![CDATA[
+      SELECT park_seq
+        FROM hpay_park_list_air
+       WHERE park_name = #{parkname}
+    ]]>
+    </select>
+        
+        <insert id="insertAirPort" parameterType="map">
+        INSERT 
+        INTO hpay_park_list_use_count_air
+            (                
+                src
+                ,park_category
+                ,park_seq
+                ,status
+                ,parkingstatus
+                ,update_date
+                ,insert_date
+                ,parkingstatus_eng          
+            )
+        VALUES
+         <foreach collection="Air_list" item="item" separator=",">
+            (   
+                 'AIR'
+                ,'PAIR'                                
+                ,#{item.ParkSeq}
+                ,#{item.status}
+                ,#{item.parkingstatus}
+                ,#{item.update_date}
+                ,(to_char(now(),'YYYYMMDDHH24MISS'))
+                ,#{item.parkingstatus_eng}
+            )
+         </foreach> 
+      </insert>   
+      
+       
+    <!-- 
+        ParkList History update
+     -->
+    <insert id="updateAllParkUseCountHistory" parameterType="com.hpay.airparking.vo.AirCollectHistoryVO">
+    <![CDATA[
+        UPDATE hpay_park_list_use_count_history_air
+        SET result_cd=#{result}, result_message=#{resultMessage}
+        WHERE work_date=#{workDate} AND work_date_seq=#{workDateSeq}                
+    ]]>
+    </insert>   
+</mapper>

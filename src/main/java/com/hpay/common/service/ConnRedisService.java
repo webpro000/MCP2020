@@ -33,4 +33,12 @@ public interface ConnRedisService {
      * @throws Exception
      */
     public Map<String, String> getHash(int dbNum, String key) throws Exception;
+    
+    /**
+     * 전체 삭제
+     *
+     * @param dbNum
+     * @param key
+     */
+    public void delAll(int dbNum, String key);    
 }

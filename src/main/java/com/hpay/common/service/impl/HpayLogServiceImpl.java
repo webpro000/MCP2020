@@ -146,6 +146,43 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
      * @param target
      * @return
      */
+   /* @Override
+    public HpayLogVO initTask(String interfaceCode, String targetType, String target)  {
+        String hostIp="";
+        try {
+            hostIp = Inet4Address.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            logger.info("UnknownHostException:Inet4Address.getLocalHost().getHostAddress()");
+            e.printStackTrace();
+        }
+        logger.info("interfacecodes"+interfaceCode);
+
+        HpayLogVO voHpayLog=new HpayLogVO();
+        voHpayLog.setInterface_code(interfaceCode);
+        Date now =new Date();
+        voHpayLog.setStart_date(now);
+        voHpayLog.setHost_type(HpayLogService.typeIp);
+        voHpayLog.setHost(hostIp);
+        voHpayLog.setTarget_type(targetType);
+        voHpayLog.setTarget(target);
+        voHpayLog.setStatus_code(HpayLogService.statusStandby);
+
+        //인터벌 내로 완료가 있는지 체크 
+        int todaySeq;
+        try {
+            todaySeq = hpayLogMDAO.selectMaxTodayWorkSeq(voHpayLog);
+            todaySeq++;
+        } catch (Exception e) {
+            e.printStackTrace();
+            todaySeq=0;
+        }
+        voHpayLog.setTask_seq(todaySeq);
+        voHpayLog.setTask_uuid(UUID.randomUUID().toString());
+        voHpayLog.setHpay_log_seq(0);
+        update(voHpayLog);
+        return voHpayLog;
+    }*/
+    
     @Override
     public HpayLogVO initTask(String interfaceCode, String targetType, String target)  {
         String hostIp="";
@@ -182,6 +219,7 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
         return voHpayLog;
     }
     
+    
     /**
      * 서버 경합 결과 체크
      *
@@ -193,6 +231,8 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
         try {
             Thread.sleep(5);
             String workHost=hpayLogMDAO.selectStandbyOrder(voHpayLog);
+            logger.info("getTask_seq는"+voHpayLog.getTask_seq());
+            
             logger.info(voHpayLog.getTask_uuid()+"-"+workHost);
             if (workHost==null) {
                 return false; 
@@ -224,6 +264,7 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
     public void update(HpayLogVO voHpayLog)  {         
         try {
 
+            logger.info("hpayinterface"+voHpayLog.getInterface_code());
             //logger.info("===============Start_date():"+voHpayLog.getStart_date());
             //logger.info("===============Start_time():"+voHpayLog.getStart_time());
             if(voHpayLog.getStart_time() == null) {
