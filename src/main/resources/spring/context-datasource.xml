@@ -10,7 +10,7 @@
     <!-- local -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://10.10.87.143:5444/hpay" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/hpay" />
         <property name="username" value="hpay"/>
         <property name="password" value="hpay1!"/>
     </bean>

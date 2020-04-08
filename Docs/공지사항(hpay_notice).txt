@@ -1,0 +1,28 @@
+--------------------------------------------------------------------- Sequence
+CREATE SEQUENCE public.seq_hpay_notice
+INCREMENT 1
+START 1;
+
+ALTER SEQUENCE public.seq_hpay_notice
+OWNER TO hpay;
+
+--------------------------------------------------------------------- Table
+CREATE TABLE public.notice
+(
+    notice_seq integer DEFAULT nextval('seq_hpay_notice'::regclass),
+    title character varying(100) COLLATE pg_catalog."default",
+    contents character varying(4000) COLLATE pg_catalog."default",
+    regid character varying COLLATE pg_catalog."default",
+    regdt timestamp with time zone,
+    uptdt timestamp with time zone,
+    useyn character varying(1) DEFAULT 'Y'
+);
+
+--------------------------------------------------------------------- Files
+\resources\sqlmap\com\hpay\notice\NoticeDAO_SQL.xml
+com\hpay\notice\vo\NoticeVO.java
+com\hpay\notice\service\dao\NoticeDAO.java
+com\hpay\notice\service\NoticeService.java
+com\hpay\notice\service\impl\NoticeServiceImpl.java
+com\hpay\notice\web\NoticeController.java
+
