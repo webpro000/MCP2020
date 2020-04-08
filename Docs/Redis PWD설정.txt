@@ -1,0 +1,38 @@
+
+1. 소스트리에서 MCP2020 명명된 저장소에서 소스 pull 받기
+
+2. redis-server 실행
+
+3. redis-cli 실행
+    
+4.127.0.0.1:6379>config get requirepass 입력
+
+결과 :
+
+1) "requirepass"
+2) ""
+빈 값으로 보일 경우
+
+5. 비번 세팅
+127.0.0.1:6379>config set requirepass test1234
+OK
+127.0.0.1:6379>config get requirepass
+(error) NOAUTH Authentication required. 메세지가 나오면
+127.0.0.1:6379>auth test1234
+OK
+
+6. 비번 재확인
+
+127.0.0.1:6379>config get requirepass
+결과 :
+
+1) "requirepass"
+2) "test1234"
+
+7. /MCP2020/src/main/webapp/RedisTest.jsp 실행 후 뜨는 버튼 누르기
+
+8. RedisDesktopManager 실행 후  AirParkUseCount(30)에 데이터 적재되었는지 확인
+
+끝
+
+추가사항 : db0로 설정되어있는부분은 김진우 대리님꼐서는 airparking.properties 애 있다고 하셨으냐 저는 못찾겠슴니다.
