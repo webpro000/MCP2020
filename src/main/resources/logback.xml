@@ -37,9 +37,25 @@
          
     <!-- 이 아래에 있는 애들 다 log로 찍겠다. -->
     <logger name="org.springframework" level="info" />
-       
     <logger name="com.hpay" level="info">
         <appender-ref ref="fileServer" />
+    </logger>
+<!--     
+    <logger name="jdbc.splonly" level="debug" />
+    <logger name="jdbc.sqltiming" level="info" />
+    <logger name="jdbc.audit" level="warn" />
+    <logger name="jdbc.resultset" level="error" />
+    <logger name="jdbc.resultsettable" level="info" />
+    <logger name="jdbc.connection" level="info" />
+     -->
+    <logger name="jdbc.splonly" level="info">
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="jdbc.connection" level="info">
+        <appender-ref ref="console" />
+    </logger>
+    <logger name="jdbc.resultsettable" level="info">
+        <appender-ref ref="console" />
     </logger>
     
     <root level="debug">

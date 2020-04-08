@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+    SQL File Name : xmlname.xm 
+    Description : 공지사항 CRUD
+    author webpro000
+    since 2020. 4. 7.
+    version 1.0
+    Modification Information
+       since          author              description
+    ===========    =============    ===========================
+    2020. 4. 7.     webpro000  		   최초 생성
+-->
+
+<mapper namespace="com.hpay.notice.service.dao.NoticeDAO">
+    <select id="selectNoticeList" parameterType="com.hpay.notice.vo.NoticeVO" resultType="com.hpay.notice.vo.NoticeVO" >
+    <![CDATA[
+        select 
+            * 
+        from notice;
+    ]]>  
+    </select>
+
+    <select id="selectNoticeCount" parameterType="com.hpay.notice.vo.NoticeVO" resultType="int" >
+    <![CDATA[
+        select 
+            count(*)
+        from notice;
+    ]]>  
+    </select>
+    
+</mapper>
