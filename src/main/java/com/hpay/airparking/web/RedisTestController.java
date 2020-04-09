@@ -124,6 +124,8 @@ public class RedisTestController extends HController{
                 throw new Exception();
             }
             
+          
+            
             logger.info("###AirWorkDateSeq ==> "+ chvo.getWorkDateSeq());
             
             //3. History 저장
@@ -131,7 +133,7 @@ public class RedisTestController extends HController{
             chvo.setResult("0001");
             chvo.setResultMessage("CP호출 시작");
             
-            ParkingAirLoadService.insertAllParkUseCountHistory(chvo);
+            /*ParkingAirLoadService.insertAllParkUseCountHistory(chvo);*/
             
             //4 xml vo로 전환 인천
             List<AirPortParkVO> tempList = ParkingAirLoadService.IncheonxmlToVo(src);
@@ -159,7 +161,8 @@ public class RedisTestController extends HController{
             hpayLogService.setDone(voHpayLog, getMessage("airparking.success.cd"),getMessage("airparking.success.msg"));
             hpayLogService.update(voHpayLog);
             jobStatus="DONE";
- 
+            
+            throw new Exception();
                     
         }catch(PSQLException e)
         {
@@ -180,11 +183,11 @@ public class RedisTestController extends HController{
             jobStatus="FAIL";
             String ErrMsg = e.getLocalizedMessage();
             
-            if(chvo != null) {
+           
                               
                 hpayLogService.setDone(voHpayLog, getMessage("airparking.error.Exception.cd"),getMessage("airparking.error.Exception.msg"),ErrMsg);
                 hpayLogService.update(voHpayLog);
-            }
+            
             e.printStackTrace();
         }finally {
             try {
@@ -206,7 +209,7 @@ public class RedisTestController extends HController{
                 if("DONE".equals(jobStatus)) {
                     hpayLogService.setCount(voHpayLog, rcvSize, insSize);
                     hpayLogService.setDone(voHpayLog, HpayLogService.statusDone, errCode, errMsg);
-                   
+                    hpayLogService.update(voHpayLog);
                     
                 } else {
                     hpayLogService.setDone(voHpayLog, HpayLogService.statusFail, errCode, errMsg);
