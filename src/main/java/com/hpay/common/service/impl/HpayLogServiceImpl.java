@@ -41,6 +41,10 @@ import com.hpay.common.vo.HpayLogVO;
 public class HpayLogServiceImpl extends HService implements HpayLogService {
     @Resource(name = "hpayLogMDAO")
     private HpayLogMDAO hpayLogMDAO;
+    
+    @Resource(name = "hpayLogService")
+    private HpayLogService hpayLogService;
+    
 
     /**
      * 로그서비스 시작
@@ -236,16 +240,15 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
             logger.info(voHpayLog.getTask_uuid()+"-"+workHost);
             if (workHost==null) {
                 return false; 
-            } else if (workHost.equals(voHpayLog.getTask_uuid())) {
+            } else if (workHost.equals(voHpayLog.getTask_uuid())) {                
                 logger.info("Task "+ voHpayLog.getTask_uuid() +" : "+HpayLogService.statusActive);
-                Date now =new Date();
-                voHpayLog.setStart_date(now);
-                voHpayLog.setStatus_code(HpayLogService.statusActive);
+                setDone(voHpayLog, workHost);              
                 update(voHpayLog);
+
                 return true;
             } else {
                 logger.info("Task "+ voHpayLog.getTask_uuid() +" : "+HpayLogService.statusStandbyDone);
-                voHpayLog.setStatus_code(HpayLogService.statusStandbyDone);
+                setDone(voHpayLog, workHost);        
                 update(voHpayLog);
                 return false; 
             }
