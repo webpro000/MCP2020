@@ -17,7 +17,7 @@
     <![CDATA[
         select 
             * 
-        from notice;
+        from TBL_NOTICE;
     ]]>  
     </select>
 
@@ -25,8 +25,31 @@
     <![CDATA[
         select 
             count(*)
-        from notice;
+        from TBL_NOTICE;
     ]]>  
     </select>
+    
+    <insert id="insertNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
+    <![CDATA[
+        insert into public.TBL_NOTICE(title, contents, regid, regdt, uptdt, useyn)
+             values(#{title},#{contents},#{regid},#{regdt},#{uptdt},#{useyn})
+       
+    ]]>  
+    </insert>
+    <insert id="updateNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
+    <![CDATA[
+        update TBL_NOTICE set contents = #{contents}, regid = #{regid}, regdt = #{regdt}, uptdt = #{uptdt}, useyn = #{useyn}
+            where notice_seq = #{notice_seq} 
+                and title = #{title}
+      ]]>  
+    </insert>
+    
+    <delete id="deleteNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
+    <![CDATA[
+        delete from TBL_NOTICE
+            where notice_seq = #{notice_seq} 
+                and title = #{title}
+      ]]>  
+    </delete>
     
 </mapper>
