@@ -12,9 +12,9 @@
     <!-- file로 log 남기기 -->
      <!-- dev -->
      <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>c:/GIT/MCP2020/logs/HPAY_ICPS_debug.log</file>
+        <file>/logs/HPAY_ICPS_debug.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>c:/GIT/MCP2020/logs/HPAY_ICPS_debug.%d{yyyy-MM-dd}.log</fileNamePattern>            
+            <fileNamePattern>/logs/HPAY_ICPS_debug.%d{yyyy-MM-dd}.log</fileNamePattern>            
         </rollingPolicy>
         <encoder>
             <pattern>
@@ -24,9 +24,9 @@
     </appender>
     
     <appender name="fileServer" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/mnsoft/appl/logs/HPAY_ICPS.log</file>
+        <file>/logs/HPAY_ICPS.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/mnsoft/appl/logs/HPAY_ICPS_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>/logs/HPAY_ICPS_%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>
