@@ -27,8 +27,7 @@
         <result property="repKeyword" column="rep_keyword"/>
         <result property="tasteRating" column="taste_rating"/>
         <result property="priceRating" column="price_rating"/>
-        <result property="serviceRating" column="service_rating"/>
-        <result property="priceRating" column="price_rating"/>
+        <result property="serviceRating" column="service_rating"/>        
         <result property="visitPurpose" column="visit_purpose"/>
         <result property="facility" column="facility"/>
         <result property="atmosphere" column="atmosphere"/>

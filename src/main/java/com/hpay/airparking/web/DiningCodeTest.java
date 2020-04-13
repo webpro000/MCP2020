@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hpay.common.service.DincdService;
 import com.hpay.common.service.HpayLogService;
 import com.hpay.common.vo.HpayLogVO;
@@ -52,7 +54,7 @@ public class DiningCodeTest extends HController {
     PropertyService propertyService;
     
     @RequestMapping(value="/DincdTest.do" ,method=RequestMethod.GET, produces="application/json;charset=UTF-8")
-    public @ResponseBody String receiveStoreDelta(HttpServletRequest request,DincdVO dincdvo,BindingResult bindingResult) {
+    public @ResponseBody String receiveStoreDelta(HttpServletRequest request,DincdVO dincdvo,BindingResult bindingResult) throws JsonProcessingException {
             //BindingResult bindingResult,) {
         logger.info("+++sendDeltaToMCP : Start");
         HpayLogVO voHpayLog = hpayLogService.init(propertiesService.getString("icps.DincoInfo.interfacecode"));
@@ -61,13 +63,20 @@ public class DiningCodeTest extends HController {
         
         dincdVO = dincdService.selectDincdList();
         
+        ObjectMapper mapper = new ObjectMapper();
+        
+        String json = mapper.writeValueAsString(dincdVO);
+        
+        logger.info("json is"+json);
         
         
-        String responseBody="";
-        responseBody="{\"interfaceCode\":\""+voHpayLog.getInterface_code()+"\", \"resultCode\":\"200\", \"resultMessage\":\"성공\"}";
-        logger.info("+++sendDeltaToMCP : Success : \n" +responseBody+"dincdVO"+dincdVO.getArea());  
+        String responseBody=json;
         
+        /*responseBody="{\"interfaceCode\":\""+voHpayLog.getInterface_code()+"\", \"resultCode\":\"200\", \"resultMessage\":\"성공\"}";*/
+        
+        logger.info("+++sendDeltaToMCP : Success : \n" +responseBody.toString()+"dincdVO"+dincdVO.getArea());  
         return responseBody;
+        
         
         
         
