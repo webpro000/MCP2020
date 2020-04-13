@@ -4,5 +4,6 @@
 <configuration>
     <typeAliases>
 		<typeAlias alias="hMap" type="able.com.vo.HMap"/>
+        <typeAlias alias="dincdVO" type="com.hpay.icps.vo.DincdVO"/>
     </typeAliases>
 </configuration>

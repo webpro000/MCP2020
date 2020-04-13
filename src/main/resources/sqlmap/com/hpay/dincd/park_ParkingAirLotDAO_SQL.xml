@@ -9,7 +9,7 @@
     ==========  =======  ========   ==============
     2019.12.04  ONESUN   1.0         최초 생성 
 -->
-<mapper namespace="com.hpay.airparking.service.dao.AirParkingMDAO">
+<mapper namespace="com.hpay.common.service.dao.DincdDAO">
     
     <resultMap id="AirCollectHistoryVO" type="com.hpay.airparking.vo.AirCollectHistoryVO">
         <result property="workDate" column="workDate"/> 

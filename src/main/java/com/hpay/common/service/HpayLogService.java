@@ -128,13 +128,6 @@ public interface HpayLogService {
      */
     
     
-    
-    
-    
-    
-    
-    
-    
     void update(HpayLogVO voHpayLog);
 
     /*
@@ -142,4 +135,6 @@ public interface HpayLogService {
     void setFail();
     void setFail(String errCode, String errMsg)throws Exception;
     */
+    
+    
 }

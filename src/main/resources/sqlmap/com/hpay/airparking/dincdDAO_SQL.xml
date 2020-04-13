@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    SQL File Name : park_ParkListDAO_SQL.xml 
+    Description : Park Use Count 재차대수 데이터를 관리한다.(등록, 수정, 삭제 및 조회)
+
+    Modification Information 
+       수정일      수정자    Version      Query Id
+    ==========  =======  ========   ==============
+    2019.12.04  ONESUN   1.0         최초 생성 
+-->
+<mapper namespace="com.hpay.common.service.dao.DincdDAO">
+    
+  <resultMap id="DinocdVO" type="com.hpay.icps.vo.DincdVO">
+        <result property="businessId" column="business_id"/> 
+        <result property="name" column="name"/> 
+        <result property="address" column="address"/> 
+        <result property="telephone" column="telephone"/>
+        <result property="longitude" column="longitude"/>
+        <result property="latitude" column="latitude"/>
+        <result property="avgRating" column="avg_rating"/>
+        <result property="aiScore" column="ai_score"/>
+        <result property="menuPhoto" column="menu_photo"/>
+        <result property="area" column="area"/>
+        <result property="rLikeCount" column="r_like_count"/>
+        <result property="repFoodKeyword" column="rep_food_keyword"/>
+        <result property="repKeyword" column="rep_keyword"/>
+        <result property="tasteRating" column="taste_rating"/>
+        <result property="priceRating" column="price_rating"/>
+        <result property="serviceRating" column="service_rating"/>
+        <result property="priceRating" column="price_rating"/>
+        <result property="visitPurpose" column="visit_purpose"/>
+        <result property="facility" column="facility"/>
+        <result property="atmosphere" column="atmosphere"/>
+        <result property="regdt" column="regdt"/>
+        <result property="uptdt" column="uptdt"/>         
+    </resultMap>
+    
+    
+   
+    <select id="selectDincdList"  resultMap="DinocdVO" >
+    <![CDATA[
+        select * from public."tbl_dincd_info"
+    ]]>             
+    </select>
+    
+</mapper>

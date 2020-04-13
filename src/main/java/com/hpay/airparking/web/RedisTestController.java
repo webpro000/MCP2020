@@ -3,12 +3,14 @@ package com.hpay.airparking.web;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -26,6 +28,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +39,7 @@ import org.xml.sax.InputSource;
 
 import com.hpay.common.service.HpayLogService;
 import com.hpay.common.vo.HpayLogVO;
+import com.hpay.notice.vo.NoticeVO;
 import com.hpay.parking.vo.ParkingLotVO;
 
 import com.hpay.airparking.service.ParkingAirLoadService;
@@ -222,12 +226,12 @@ public class RedisTestController extends HController{
                 logger.info("++++프로세스 종료 Airparking.dynamic.collect Exception : "+e.getMessage());
                 e.printStackTrace();
             }
-
             
+     
+           
         }
-
-        
+   
     }
-    
+
 
 }
