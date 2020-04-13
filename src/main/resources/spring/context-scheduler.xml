@@ -11,14 +11,14 @@
              http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
 
     <bean id="collectFileInfoScheduler" class="com.hpay.icps.web.ScheduledTask" />
-    <bean id="airparkDynamicScheduler" class="com.hpay.airparking.web.ParkingAirLoadController" />
+  <!--   <bean id="airparkDynamicScheduler" class="com.hpay.airparking.web.ParkingAirLoadController" /> -->
  
     <task:scheduler id="gsScheduler" pool-size="10" />
     <task:executor id="gsTaskExecutor" pool-size="10" />
     <task:annotation-driven executor="gsTaskExecutor" scheduler="gsScheduler" />
 
-    <task:scheduled-tasks scheduler="gsScheduler">
-     <task:scheduled ref="airparkDynamicScheduler" method="loadParkingLotInfoAll" cron="0 0/2 * * * ?"  />
+    <!--  <task:scheduled-tasks scheduler="gsScheduler">
+    <task:scheduled ref="airparkDynamicScheduler" method="loadParkingLotInfoAll" cron="0 0/2 * * * ?"  /> -->
         <!--
     
         매 분 0초에 실행 각 실행마다 인터벌이 60초
@@ -28,6 +28,6 @@
        
         ONESUN 품확기간동안막아놓기
         <task:scheduled ref="collectFileInfoScheduler" method="hpayDelStoreSend" cron="0 0 4 * * ?"  />
-        -->
-    </task:scheduled-tasks>        
+        
+    </task:scheduled-tasks>   -->     
 </beans>
