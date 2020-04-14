@@ -14,11 +14,9 @@
      <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>/logs/HPAY_ICPS_debug.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-<<<<<<< HEAD
             <fileNamePattern>/mnsoft/appl/logs/HPAY_COMMON_%d{yyyy-MM-dd}.log</fileNamePattern>            
-=======
-            <fileNamePattern>/logs/HPAY_ICPS_debug.%d{yyyy-MM-dd}.log</fileNamePattern>            
->>>>>>> d63abaa429372020c82143cfebac72a59b61d1f5
+           <!--  <fileNamePattern>/logs/HPAY_ICPS_debug.%d{yyyy-MM-dd}.log</fileNamePattern>          -->   
+
         </rollingPolicy>
         <encoder>
             <pattern>
