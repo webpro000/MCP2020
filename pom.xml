@@ -94,7 +94,14 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-       
+
+
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.3</version>
+        </dependency>
     </dependencies>
     <build>
         <resources>
