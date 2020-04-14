@@ -62,6 +62,14 @@ public class Item {
         this.dutyDiv = dutyDiv;
     }
     
+    /*
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "Item [rnum=" + rnum + ", dutyAddr=" + dutyAddr + ", dutyDiv=" + dutyDiv + "]";
+    }
+    
     
     
     

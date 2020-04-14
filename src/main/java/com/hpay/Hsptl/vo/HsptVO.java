@@ -63,6 +63,14 @@ public class HsptVO {
         Items = items;
     }
     
+    /*
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "HsptVO [resultCode=" + resultCode + ", resultMag=" + resultMag + ", Items=" + Items + "]";
+    }
+    
     
     
     
