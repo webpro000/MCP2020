@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hpay.Hsptl.vo.HsptVO;
@@ -23,10 +24,22 @@ import com.hpay.common.service.HpayLogService;
 import com.hpay.common.vo.HpayLogVO;
 import com.hpay.icps.vo.DincdVO;
 import com.hpay.notice.vo.NoticeVO;
+
+
+
 import org.apache.commons.beanutils.BeanUtils;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
+
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.hpay.icps.vo.DinsptVO;
@@ -65,7 +78,7 @@ public class DiningCodeTest extends HController {
     PropertyService propertyService;
     
     @RequestMapping(value="/DincdTest.do" ,method=RequestMethod.GET, produces="application/json;charset=UTF-8")
-    public @ResponseBody DinsptVO receiveStoreDelta(HttpServletRequest request,DincdVO dincdvo,BindingResult bindingResult) throws JsonProcessingException {
+    public @ResponseBody DinsptVO receiveStoreDelta(HttpServletRequest request,DincdVO dincdvo,BindingResult bindingResult)  {
            
         DincdVO dincdVO = new DincdVO();
         
@@ -157,4 +170,37 @@ public class DiningCodeTest extends HController {
         return dinsptVO;
         
     }
+    
+    @RequestMapping(value="/DincdJsonPars.do" ,method=RequestMethod.GET, produces="application/json;charset=UTF-8")
+    public @ResponseBody DinsptVO DincdJsonPars(HttpServletRequest request) throws FileNotFoundException, IOException   {
+        
+               
+        JSONParser parser = new JSONParser();
+        JSONObject obj = null;
+        JSONObject jsonObj2 = null;
+        try{
+            obj = (JSONObject)parser.parse(new FileReader("C://GIT//MCP2020//jsontemp//DincdTest_1.json"));
+            JSONArray companyList = (JSONArray)obj.get("basic_data");
+            
+            for(int i=0;i<companyList.size();i++)
+            {
+               jsonObj2 = (JSONObject)companyList.get(i);
+                        
+            }
+            
+            
+        }catch(ParseException e){
+            System.out.println("변환에 실패");
+            e.printStackTrace();
+        }
+        
+        logger.info(obj.toString());
+        logger.info(jsonObj2.toString());        
+        
+        
+        return null;
+        
+        
+    }
 }
+  
