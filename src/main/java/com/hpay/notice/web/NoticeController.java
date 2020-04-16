@@ -6,8 +6,10 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import able.com.service.prop.PropertyService;
 import able.com.web.HController;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hpay.common.service.HpayLogService;
+import com.hpay.common.vo.HpayLogVO;
 import com.hpay.icps.service.StoreDeletedService;
 //import com.hpay.notice.service.dao.NoticeDAO;
 import com.hpay.notice.service.NoticeService;
@@ -48,6 +52,13 @@ public class NoticeController extends HController {
     @Resource(name="noticeService")
     private NoticeService noticeService;
     
+    @Resource(name="hpayLogService")
+    private HpayLogService hpayLogService;
+    
+    
+    @Autowired
+    PropertyService propertyService;
+    
     @RequestMapping(path="/NOTICE/NoticeList.do")
     public @ResponseBody List<NoticeVO> selectNoticeList(NoticeVO vo, Model model, HttpServletRequest req){
         //NoticeVO vo = new NoticeVO();
@@ -59,16 +70,23 @@ public class NoticeController extends HController {
             logger.info("-------------------------------------------cnt:"+cnt);
             list = noticeService.selectNoticeList(vo);
             logger.info("-------------------------------------------list:"+list.toString());
+            logger.info("+++sendDeltaToMCP : Start");
+            HpayLogVO voHpayLog = hpayLogService.init(propertiesService.getString("hmns.delta.interfacecode"));
+            hpayLogService.update(voHpayLog);
+            
+            String responseBody="";
+           
+            logger.info("+++sendDeltaToMCP : Success : " +responseBody); 
         }catch(Exception e){
             e.printStackTrace();
         }
         return list;
     }
     
-    @RequestMapping(value="/cmdHpayDelStoreSend2.do", method=RequestMethod.GET, produces="application/json;charset=UTF-8")
+  /*  @RequestMapping(value="/cmdHpayDelStoreSend2.do", method=RequestMethod.GET, produces="application/json;charset=UTF-8")
     public @ResponseBody String delstore1() {        
         return storeDeletedService.sendDeletedStoreInfoCompareWithRecentDelta();
-    }
+    }*/
     
     
     
