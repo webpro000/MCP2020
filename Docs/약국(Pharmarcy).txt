@@ -1,0 +1,21 @@
+************************ 약국 XML 처리 ************************
+ NIA한국정보화진흥원의 OpenAPI 서비스에서 제공하는 xml (약국)데이터를 수신하여
+ XML -> json -> vo -> (DB) 의 처리 과장
+ ************************ 약국 XML 처리 ************************
+ 
+
+
+------------------------------------------- 프로그램 목록
+com\hpay\pharmacy\vo\PharmacyVO.java
+com\hpay\pharmacy\vo\PharmacyListVO.java
+com\hpay\pharmacy\service\dao\PharmacyDAO.java
+com\hpay\pharmacy\service\PharmacyService.java
+com\hpay\pharmacy\service\impl\PharmacyServiceImpl.java
+com\hpay\pharmacy\web\PharmacyController.java
+
+-------------------------------------------- TEST 확인.
+http://localhost:8080/TEST/PharmacyList.do       : RESTAPI XML 반환
+http://localhost:8080/TEST/PharmacyListCall.do   : XML -> Json -> VO -> (DB)
+
+
+
