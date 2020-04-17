@@ -2,6 +2,7 @@ package com.hpay.common.service.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -46,11 +47,8 @@ public class DincdServiceImpl implements DincdService {
     
     
     public DincdVO selectDincdList(){
-      
-        
-        
-       DincdVO dincdVO = null;
-        
+
+       DincdVO dincdVO = null;  
        
             try {
                 return dincdVO = dincdDAO.selectDincdList();
@@ -61,5 +59,13 @@ public class DincdServiceImpl implements DincdService {
             return dincdVO;
             
            
+    }
+    
+    public void insertTblDincdInfo(Map<String,Object> map){
+        
+       System.out.println("name은"+(map.get("name")));
+        
+        dincdDAO.insertTblDincdInfo(map);
+        
     }
 }

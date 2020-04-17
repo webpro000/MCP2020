@@ -239,6 +239,18 @@ public class DincdVO {
         this.tasteRating = tasteRating;
     }
     /**
+     * @return the priceRating
+     */
+    public float getPriceRating() {
+        return priceRating;
+    }
+    /**
+     * @param priceRating the priceRating to set
+     */
+    public void setPriceRating(float priceRating) {
+        this.priceRating = priceRating;
+    }
+    /**
      * @return the serviceRating
      */
     public float getServiceRating() {
@@ -310,7 +322,7 @@ public class DincdVO {
     public void setUptdt(String uptdt) {
         this.uptdt = uptdt;
     }
-    
+   
     
     
 }

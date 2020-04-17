@@ -31,7 +31,7 @@ import com.hpay.icps.vo.DincdVO;
 
 
 import org.apache.commons.beanutils.BeanUtils;
-
+import org.apache.commons.net.ntp.TimeStamp;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
@@ -40,13 +40,17 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.ArrayList;
 
 import com.hpay.icps.vo.DinsptVO;
 
+import java.text.SimpleDateFormat;
 /**
  * <pre>
  * Statements
@@ -100,19 +104,19 @@ public class DiningCodeTest extends HController {
                                    
             Map<String,Object> input = new HashMap<String,Object>();
             
-            input = BeanUtils.describe(dincdVO); //Vo를 HashMap으로 변환
-            
+            /*input = BeanUtils.describe(dincdVO); //Vo를 HashMap으로 변환
+*/            
             Map<String,Object> realinput1 = new HashMap<String,Object>();
             
-            realinput1.put("name",input.get("name"));
+            realinput1.put("name",dincdVO.getName());
             
-            realinput1.put("address",input.get("address"));
+            realinput1.put("address",dincdVO.getAddress());
             
-            realinput1.put("telephone",input.get("telephone"));
+            realinput1.put("telephone",dincdVO.getTelephone());
             
-            realinput1.put("longitude",input.get("longitude"));
+            realinput1.put("longitude",dincdVO.getLongitude());
             
-            realinput1.put("latitude",input.get("latitude"));
+            realinput1.put("latitude",dincdVO.getLatitude());
             
             List<Map<String,Object>> realinlist1 =new ArrayList<Map<String,Object>>();
             
@@ -123,41 +127,52 @@ public class DiningCodeTest extends HController {
             
             Map<String,Object> realinput2 = new HashMap<String,Object>();
             
-            realinput2.put("avgRating", input.get("avgRating"));
+            realinput2.put("avgRating",dincdVO.getAvgRating());
             
-            realinput2.put("aiScore", input.get("aiScore"));
+            realinput2.put("aiScore", dincdVO.getAiScore());
             
-            realinput2.put("openHour", input.get("openHour"));
+            realinput2.put("openHour", dincdVO.getOpenHour());
             
-            realinput2.put("repPhoto", input.get("repPhoto"));
+            realinput2.put("repPhoto", dincdVO.getRepPhoto());
             
-            realinput2.put("menuPhoto", input.get("menuPhoto"));
+            realinput2.put("menuPhoto", dincdVO.getMenuPhoto());
+                      
+            realinput2.put("area", dincdVO.getArea());
             
-            realinput2.put("menuPhoto", input.get("menuPhoto"));
+            realinput2.put("rLikeCount", dincdVO.getrLikeCount());
             
-            realinput2.put("area", input.get("area"));
+            realinput2.put("repFoodKeyword", dincdVO.getRepFoodKeyword());
             
-            realinput2.put("rLikeCount", input.get("rLikeCount"));
+            realinput2.put("repKeyword", dincdVO.getRepKeyword());
             
-            realinput2.put("repFoodKeyword", input.get("repFoodKeyword"));
+            realinput2.put("tasteRating", dincdVO.getTasteRating());
             
-            realinput2.put("repKeyword", input.get("repKeyword"));
+            realinput2.put("priceRating", dincdVO.getPriceRating());
             
-            realinput2.put("tasteRating", input.get("tasteRating"));
+            realinput2.put("serviceRating", dincdVO.getServiceRating());
             
-            realinput2.put("priceRating", input.get("priceRating"));
+            realinput2.put("visitPurpose", dincdVO.getVisitPurpose());
             
-            realinput2.put("serviceRating", input.get("serviceRating"));
+            realinput2.put("facility", dincdVO.getFacility());
             
-            realinput2.put("visitPurpose", input.get("visitPurpose"));
+            realinput2.put("atmosphere", dincdVO.getAtmosphere());
             
-            realinput2.put("facility", input.get("facility"));
+            SimpleDateFormat beforeFormat = new SimpleDateFormat("yyyymmdd");
+           
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); //date 시간수정 00:00:00
             
-            realinput2.put("atmosphere", input.get("atmosphere"));
+                       
+            Date tempDate = null;
             
-            realinput2.put("regdt", input.get("regdt"));
+            tempDate = beforeFormat.parse(dincdVO.getRegdt());
             
-            realinput2.put("uptdt", input.get("uptdt"));
+           String transDate = sdf.format(tempDate);
+                        
+            logger.info("transDat22e"+transDate );
+            
+            realinput2.put("regdt",transDate );
+            
+            realinput2.put("uptdt", dincdVO.getUptdt());
     
             List<Map<String,Object>> realinlist2 =new ArrayList<Map<String,Object>>();
             
@@ -175,7 +190,7 @@ public class DiningCodeTest extends HController {
     }
     
     @RequestMapping(value="/DincdJsonPars.do" ,method=RequestMethod.GET, produces="application/json;charset=UTF-8")
-    public @ResponseBody DinsptVO DincdJsonPars(HttpServletRequest request) throws FileNotFoundException, IOException   {
+    public @ResponseBody DinsptVO DincdJsonPars(HttpServletRequest request) throws FileNotFoundException, IOException, java.text.ParseException   {
         
                
         JSONParser parser = new JSONParser();
@@ -206,6 +221,81 @@ public class DiningCodeTest extends HController {
         logger.info("imgVO"+imgVO.getAdditionnal_data());
         logger.info("imgVO"+imgVO.getBasic_data());
         logger.info("imgVO"+imgVO.getBusiness_id());
+        
+        List<Map<String,Object>> additional_data = imgVO.getAdditionnal_data();
+        List<Map<String,Object>> basic_data = imgVO.getBasic_data();
+        int business_id = imgVO.getBusiness_id();
+        
+        Map<String,Object> input = new HashMap<String,Object>();
+        
+        input.put("business_id",imgVO.getBusiness_id());
+        
+        
+       /* basic_data.get(0).get("name");
+        basic_data.get(0).get("address");
+        basic_data.get(0).get("telephone");
+        basic_data.get(0).get("longitude");
+        basic_data.get(0).get("latitude"); */           
+        
+        input.put("name",basic_data.get(0).get("name"));
+        input.put("address", basic_data.get(0).get("address"));
+        input.put("telephone", basic_data.get(0).get("telephone"));
+        input.put("logitude",  basic_data.get(0).get("longitude"));
+        input.put("latitude", basic_data.get(0).get("latitude"));
+        
+        
+        /*additional_data.get(0).get("avgRating");
+        additional_data.get(0).get("aiScore");
+        additional_data.get(0).get("openHour");
+        additional_data.get(0).get("repPhoto");
+        additional_data.get(0).get("menuPhoto");
+        additional_data.get(0).get("area");
+        additional_data.get(0).get("rLikeCount");        
+        additional_data.get(0).get("aiScore");
+        additional_data.get(0).get("repFoodKeyword");
+        additional_data.get(0).get("repKeyword");
+        additional_data.get(0).get("tasteRating");
+        additional_data.get(0).get("priceRating");
+        additional_data.get(0).get("serviceRating");
+        additional_data.get(0).get("visitPurpose");
+        additional_data.get(0).get("facility");
+        additional_data.get(0).get("atmosphere");
+        additional_data.get(0).get("regdt");
+        additional_data.get(0).get("repFoodKeyword");
+        additional_data.get(0).get("uptdt");*/
+        
+        input.put("avg_rating",additional_data.get(0).get("avgRating"));
+        input.put("ai_score",additional_data.get(0).get("aiScore"));
+        input.put("open_hour",additional_data.get(0).get("openHour"));        
+        input.put("rep_photo",additional_data.get(0).get("repPhoto"));
+        input.put("menu_photo",additional_data.get(0).get("menuPhoto"));
+        input.put("area",additional_data.get(0).get("area"));
+        input.put("r_like_count",additional_data.get(0).get("rLikeCount"));
+        input.put("ai_score",additional_data.get(0).get("aiScore"));
+        input.put("rep_food_keyword",additional_data.get(0).get("repFoodKeyword"));
+        input.put("rep_keyword",additional_data.get(0).get("repKeyword"));
+        input.put("taste_rating",additional_data.get(0).get("tasteRating"));
+        input.put("price_rating",additional_data.get(0).get("priceRating"));
+        input.put("service_rating",additional_data.get(0).get("serviceRating"));        
+        input.put("visit_purpose",additional_data.get(0).get("visitPurpose"));
+        input.put("facility",additional_data.get(0).get("facility"));
+        input.put("atmosphere",additional_data.get(0).get("atmosphere"));
+        
+        String date = (String) additional_data.get(0).get("regdt");
+        
+        SimpleDateFormat beforeFormat = new SimpleDateFormat("yyyymmdd");
+        
+        Date tempdate = null;
+        
+        tempdate = beforeFormat.parse(date);
+        
+        input.put("regdt",tempdate);
+        input.put("rep_food_keyword",additional_data.get(0).get("repFoodKeyword"));
+        input.put("uptdt",additional_data.get(0).get("uptdt"));
+        
+        dincdService.insertTblDincdInfo(input);   //insertDincdList 서비스 호출.  
+        
+        
         
         return null;
         

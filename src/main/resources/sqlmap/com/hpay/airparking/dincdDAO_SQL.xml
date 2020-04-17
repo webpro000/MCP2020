@@ -35,12 +35,69 @@
         <result property="uptdt" column="uptdt"/>         
     </resultMap>
     
-    
-   
-    <select id="selectDincdList"  resultMap="DinocdVO" >
+     <select id="selectDincdList"  resultMap="DinocdVO" >
     <![CDATA[
-        select * from public."tbl_dincd_info"
+        select business_id,name,address,telephone,longitude,latitude,avg_rating,ai_score,open_hour,rep_photo,menu_photo,area,r_like_count,rep_food_keyword,rep_keyword,taste_rating,price_rating,service_rating,visit_purpose,facility,atmosphere,TO_CHAR(regdt,'YYYY-MM-DD HH24:MI:SS:MS') as regdt,TO_CHAR(uptdt,'YYYY-MM-DD HH24:MI:SS:MS') as uptdt from tbl_dincd_info;
     ]]>             
-    </select>
+   </select>
+    
+    <insert id="insertTblDincdInfo" parameterType="map">
+        INSERT 
+            INTO tbl_dincd_info_tmp
+                (                
+                    business_id 
+                    ,name 
+                    ,address 
+                    ,telephone 
+                    ,longitude 
+                    ,latitude 
+                    ,avg_rating 
+                    ,ai_score 
+                    ,open_hour 
+                    ,rep_photo 
+                    ,menu_photo 
+                    ,area 
+                    ,r_like_count 
+                    ,rep_food_keyword 
+                    ,rep_keyword 
+                    ,taste_rating 
+                    ,price_rating 
+                    ,service_rating 
+                    ,visit_purpose
+                    ,facility 
+                    ,atmosphere 
+                    ,regdt 
+                    ,uptdt     
+                )
+            VALUES            
+                (   
+                                                
+                    #{business_id}
+                    ,#{name}
+                    ,#{address}
+                    ,#{telephone}                   
+                    ,#{longitude}
+                    ,#{latitude}
+                    ,#{avg_rating}
+                    ,#{ai_score}
+                    ,#{open_hour}                   
+                    ,#{rep_photo}
+                    ,#{menu_photo}
+                    ,#{area}
+                    ,#{r_like_count}
+                    ,#{rep_food_keyword}                   
+                    ,#{rep_keyword}
+                    ,#{taste_rating}
+                    ,#{price_rating}
+                    ,#{service_rating}
+                    ,#{visit_purpose}                   
+                    ,#{facility}
+                    ,#{atmosphere}
+                    ,#{regdt}
+                    ,#{uptdt}        
+                )   
+    </insert>
+   
+   
     
 </mapper>

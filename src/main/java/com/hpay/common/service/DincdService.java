@@ -1,5 +1,7 @@
 package com.hpay.common.service;
 
+import java.util.Map;
+
 import com.hpay.common.vo.HpayLogVO;
 import com.hpay.icps.vo.DincdVO;
 
@@ -25,5 +27,7 @@ import com.hpay.icps.vo.DincdVO;
 public interface DincdService {
 
     DincdVO selectDincdList();
+    
+    void insertTblDincdInfo(Map<String,Object> map);
     
 }

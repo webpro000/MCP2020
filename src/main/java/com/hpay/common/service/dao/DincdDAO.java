@@ -1,5 +1,8 @@
 package com.hpay.common.service.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import able.com.mybatis.Mapper;
 
 import com.hpay.common.vo.HpayLogVO;
@@ -33,6 +36,10 @@ public interface DincdDAO {
      * @return
      */   
     DincdVO selectDincdList() throws Exception;
+    
+    void insertTblDincdInfo(Map<String, Object> map);
+        
+    
     
 
 }
