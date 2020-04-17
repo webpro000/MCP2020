@@ -17,13 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.hpay.Hsptl.vo.HsptVO;
 import com.hpay.Hsptl.vo.Item;
 import com.hpay.common.service.DincdService;
 import com.hpay.common.service.HpayLogService;
 import com.hpay.common.vo.HpayLogVO;
+import com.hpay.icps.vo.DincdJsonVO;
 import com.hpay.icps.vo.DincdVO;
 import com.hpay.notice.vo.NoticeVO;
+import com.hpay.icps.vo.DincdVO;
 
 
 
@@ -184,8 +187,7 @@ public class DiningCodeTest extends HController {
             
             for(int i=0;i<companyList.size();i++)
             {
-               jsonObj2 = (JSONObject)companyList.get(i);
-                        
+               jsonObj2 = (JSONObject)companyList.get(i);                        
             }
             
             
@@ -195,8 +197,15 @@ public class DiningCodeTest extends HController {
         }
         
         logger.info(obj.toString());
-        logger.info(jsonObj2.toString());        
+        logger.info(jsonObj2.toString());
         
+        
+        Gson gson = new Gson();
+        DincdJsonVO imgVO = gson.fromJson(obj.toString(), DincdJsonVO.class);
+        
+        logger.info("imgVO"+imgVO.getAdditionnal_data());
+        logger.info("imgVO"+imgVO.getBasic_data());
+        logger.info("imgVO"+imgVO.getBusiness_id());
         
         return null;
         
