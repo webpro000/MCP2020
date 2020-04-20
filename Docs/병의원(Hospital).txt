@@ -1,0 +1,14 @@
+
+--------------------------------------------------------------------- 프로그램목록
+
+com\hpay\hsptl\vo\Item.java
+com\hpay\hsptl\vo\HsptVO.java
+com\hpay\hsptl\service\dao\HsptlDAO.java
+com\hpay\hsptl\service\HsptlService.java
+com\hpay\hsptl\service\impl\HsptlServiceImpl.java
+com\hpay\hsptl\web\HsptlController.java
+
+--------------------------------------------------------------------- 프로그램 URL
+http://localhost:8080/TEST/HsptlList.do         : 병의원 xml 서비스 테스트
+http://localhost:8080/TEST/HsptlListCall.do     : 병의원 xml 수집 테스트
+
