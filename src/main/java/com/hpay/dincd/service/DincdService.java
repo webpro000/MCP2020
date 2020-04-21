@@ -30,4 +30,6 @@ public interface DincdService {
     
     void insertTblDincdInfo(Map<String,Object> map);
     
+    void deleteTblDincdInfo();
+    
 }

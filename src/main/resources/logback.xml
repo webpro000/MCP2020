@@ -48,13 +48,13 @@
     <logger name="jdbc.resultsettable" level="info" />
     <logger name="jdbc.connection" level="info" />
      -->
-    <logger name="jdbc.splonly" level="info">
+    <logger name="jdbc.splonly" level="console">
         <appender-ref ref="console" />
     </logger>
-    <logger name="jdbc.connection" level="info">
+    <logger name="jdbc.connection" level="console">
         <appender-ref ref="console" />
     </logger>
-    <logger name="jdbc.resultsettable" level="info">
+    <logger name="jdbc.resultsettable" level="console">
         <appender-ref ref="console" />
     </logger>
     

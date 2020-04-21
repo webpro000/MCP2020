@@ -98,6 +98,11 @@
                 )   
     </insert>
    
+    <delete id="deleteTblDincdInfo">
+    <![CDATA[
+        DELETE FROM tbl_dincd_info_tmp
+    ]]>             
+   </delete>
    
     
 </mapper>

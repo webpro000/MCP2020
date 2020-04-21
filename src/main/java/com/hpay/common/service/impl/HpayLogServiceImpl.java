@@ -366,6 +366,29 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
                  
         }
     }
+    /**
+     * 로그서비스 상태 저장 에러메세지 제외
+     *
+     * @param voHpayLog
+     * @param Status
+     * @param errCode
+     * @param errMsg
+     */
+    @Override
+    public void setDone(HpayLogVO voHpayLog, String Status, String errCode) {
+        
+        
+        try{
+            voHpayLog.setError_code(errCode);    
+            voHpayLog.setStatus_code(Status);
+            
+            } catch (Exception e) {
+                logger.info("setDone Exception==>"+e.getMessage());
+                     
+            }
+        
+        // TODO Auto-generated method stub
+    }
         
     /**
      * 인증키 결과 세팅
@@ -379,4 +402,9 @@ public class HpayLogServiceImpl extends HService implements HpayLogService {
         voHpayLog.setTarget_type(targetType);
         voHpayLog.setTarget(target);
     }
+
+    /*
+     * @see com.hpay.common.service.HpayLogService#setDone(com.hpay.common.vo.HpayLogVO, java.lang.String, java.lang.String)
+     */
+  
 }

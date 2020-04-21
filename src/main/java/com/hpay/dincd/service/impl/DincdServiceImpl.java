@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import com.hpay.dincd.service.DincdService;
 import com.hpay.dincd.service.dao.DincdDAO;
-import com.hpay.common.service.dao.HpayLogMDAO;
 import com.hpay.dincd.vo.DincdVO;
 
 
@@ -63,6 +62,12 @@ public class DincdServiceImpl implements DincdService {
        System.out.println("name은"+(map.get("name")));
         
         dincdDAO.insertTblDincdInfo(map);
+        
+    }
+    
+    public void deleteTblDincdInfo(){
+        
+        dincdDAO.deleteTblDincdInfo();
         
     }
 }

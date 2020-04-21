@@ -114,6 +114,9 @@ public class RedisTestController extends HController{
         
         try{
             
+            
+            // TO DO ... 주차장 상태 정보 REDIS 업데이트 Start.
+            
             logger.info("STEP1. selectWorkDateSeq ");
             chvo = ParkingAirLoadService.selectWorkDateSeqParkListUseCount();
             if(chvo == null || StringUtils.isEmpty(chvo.getWorkDateSeq()))
@@ -127,6 +130,7 @@ public class RedisTestController extends HController{
             chvo.setSrc(src);
             chvo.setResult("0001");
             chvo.setResultMessage("CP호출 시작");
+            
             ParkingAirLoadService.insertAllParkUseCountHistory(chvo);
             
             //4 xml vo로 전환 인천
@@ -149,8 +153,11 @@ public class RedisTestController extends HController{
             //7.1 파일로 저장
             
             //8. History 수정 
-            chvo.setResult(getMessage("airparking.success.cd"));
-            chvo.setResultMessage(getMessage("airparking.success.msg"));
+            
+            // TO DO ... 주차장 상태 정보 REDIS 업데이트 End.
+          
+            hpayLogService.setDone(voHpayLog, getMessage("airparking.success.cd"),getMessage("airparking.success.msg"));
+            hpayLogService.update(voHpayLog);
             jobStatus="DONE";
  
                     
@@ -162,11 +169,9 @@ public class RedisTestController extends HController{
             ErrMsg = e.getLocalizedMessage();
                         
             if(chvo != null) {
-               /* 
-                chvo.setResult(getMessage("airparking.error.PSQLException.cd"));   //9995 기타오류(Exception)
-                chvo.setResultMessage(getMessage("airparking.error.PSQLException.msg"));
-                */
+               
                 hpayLogService.setDone(voHpayLog, getMessage("airparking.error.PSQLException.cd"),getMessage("airparking.error.PSQLException.msg"),ErrMsg);
+                hpayLogService.update(voHpayLog);
             }
             e.printStackTrace();
         }catch(Exception e)
@@ -176,9 +181,9 @@ public class RedisTestController extends HController{
             String ErrMsg = e.getLocalizedMessage();
             
             if(chvo != null) {
-              
-                
+                              
                 hpayLogService.setDone(voHpayLog, getMessage("airparking.error.Exception.cd"),getMessage("airparking.error.Exception.msg"),ErrMsg);
+                hpayLogService.update(voHpayLog);
             }
             e.printStackTrace();
         }finally {
@@ -201,8 +206,11 @@ public class RedisTestController extends HController{
                 if("DONE".equals(jobStatus)) {
                     hpayLogService.setCount(voHpayLog, rcvSize, insSize);
                     hpayLogService.setDone(voHpayLog, HpayLogService.statusDone, errCode, errMsg);
+                   
+                    
                 } else {
                     hpayLogService.setDone(voHpayLog, HpayLogService.statusFail, errCode, errMsg);
+                 
                 }
                 hpayLogService.update(voHpayLog);
                 logger.info("++++프로세스 종료 Airparking.dynamic.collect");

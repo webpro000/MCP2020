@@ -103,6 +103,15 @@ public interface HpayLogService {
      */
     void setDone(HpayLogVO voHpayLog, String Status);
     /**
+     * 로그서비스 상태 저장 에러 메세지 제외
+     *
+     * @param voHpayLog
+     * @param Status
+     * @param errCode     
+     */
+    
+    void setDone(HpayLogVO voHpayLog,String Status, String errCode);  
+    /**
      * 로그서비스 결과 저장
      *
      * @param voHpayLog
@@ -117,6 +126,15 @@ public interface HpayLogService {
      *
      * @param voHpayLog
      */
+    
+    
+    
+    
+    
+    
+    
+    
+    
     void update(HpayLogVO voHpayLog);
 
     /*
