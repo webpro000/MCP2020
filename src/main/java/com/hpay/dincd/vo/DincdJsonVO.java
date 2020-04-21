@@ -24,23 +24,20 @@ import java.util.Map;
  */
 
 public class DincdJsonVO {
-    private int businessId = 0;
+    private int business_id = 0;
     private List<Map<String,Object>> basic_data = new ArrayList();      //결과메세지
     private List<Map<String,Object>> additionnal_data = new ArrayList();
     /**
-     * @return the businessId
+     * @return the business_id
      */
-    /**
-     * @return the businessId
-     */
-    public int getBusinessId() {
-        return businessId;
+    public int getBusiness_id() {
+        return business_id;
     }
     /**
-     * @param businessId the businessId to set
+     * @param business_id the business_id to set
      */
-    public void setBusinessId(int businessId) {
-        this.businessId = businessId;
+    public void setBusiness_id(int business_id) {
+        this.business_id = business_id;
     }
     /**
      * @return the basic_data
@@ -66,6 +63,7 @@ public class DincdJsonVO {
     public void setAdditionnal_data(List<Map<String, Object>> additionnal_data) {
         this.additionnal_data = additionnal_data;
     }
-
    
+    
+
 }

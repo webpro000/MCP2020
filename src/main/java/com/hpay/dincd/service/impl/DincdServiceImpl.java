@@ -58,15 +58,11 @@ public class DincdServiceImpl implements DincdService {
            
     }
     
-    public void insertTblDincdInfo(Map<String,Object> map){              
+    public void insertTblDincdInfo(Map<String,Object> map){
+        
+       System.out.println("name은"+(map.get("name")));
         
         dincdDAO.insertTblDincdInfo(map);
         
     }
-    
-    /*public void deleteTblDincdInfo() throws Exception{
-        
-               
-        dincdDAO.deleteTblDincdInfo();
-    }*/
 }
