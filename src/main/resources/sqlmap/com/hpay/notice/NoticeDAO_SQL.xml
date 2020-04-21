@@ -10,6 +10,7 @@
        since          author              description
     ===========    =============    ===========================
     2020. 4. 7.     webpro000          최초 생성
+    2020. 4. 22.    webpro000       공지사항 CRUD
 -->
 
 <mapper namespace="com.hpay.notice.service.dao.NoticeDAO">
@@ -42,6 +43,9 @@
         <if test="gtype != null and gtype != ''">
         AND gtype = #{gtype}
         </if>
+        <if test="useyn != null and useyn != ''">
+        AND useyn = #{useyn}
+        </if>
     </sql>
     
     
@@ -52,18 +56,31 @@
     ]]>  
     </insert>
     <update id="updateNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
-    <![CDATA[
         update TBL_NOTICE 
-        set title = #{title}, contents = #{contents}, gtype = #{gtype}
-        , regid = #{regid}, uptdt = now(), useyn = #{useyn}
+        set uptdt = now()
+        <if test="title != null">
+        , title = #{title}
+        </if>
+        <if test="contents != null">
+        , contents = #{contents}
+        </if>
+        <if test="gtype != null">
+        , gtype = #{gtype}
+        </if>
+        <if test="regid != null">
+        , regid = #{regid}
+        </if>
+        <if test="useyn != null">
+        , useyn = #{useyn}
+        </if>
         where notice_seq = #{notice_seq}
-      ]]>  
+
     </update>
     
     <update id="deleteNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
     <![CDATA[
         update TBL_NOTICE 
-        set useyn = "N"
+        set useyn = #{useyn}
         where notice_seq = #{notice_seq}
       ]]>  
     </update>

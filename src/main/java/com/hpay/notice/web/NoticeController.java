@@ -34,6 +34,7 @@ import com.hpay.notice.vo.NoticeVO;
  *     since          author              description
  *  ===========    =============    ===========================
  *  2020. 4. 7.     webpro000     	최초 생성
+ *  2020. 4. 22.    webpro000       공지사항 CRUD
  * </pre>
  */
 
@@ -44,15 +45,17 @@ public class NoticeController extends HController {
     private NoticeService noticeService;
     
     @RequestMapping(path="/NOTICE/NoticeList.do")
-    public @ResponseBody List<NoticeVO> selectNoticeList(NoticeVO vo, Model model, HttpServletRequest req){
+    public @ResponseBody List<NoticeVO> NoticeList(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeList.do
+        //http://localhost:8080/NOTICE/NoticeList.do?title=S&useyn=Y
         List<NoticeVO> list = new ArrayList();
         Integer cnt = 0;
         try{
-            logger.info("-------------------------------------------Start");
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
             cnt = noticeService.selectNoticeCount(vo);
-            logger.info("-------------------------------------------cnt:"+cnt);
+            logger.info("\n-------------------------------------------cnt:"+cnt);
             list = noticeService.selectNoticeList(vo);
-            logger.info("-------------------------------------------list:"+list.toString());
+            logger.info("\n-------------------------------------------list:"+list.toString());
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -60,21 +63,57 @@ public class NoticeController extends HController {
     }
     
     @RequestMapping(path="/NOTICE/NoticeInsert.do")
-    public @ResponseBody List<NoticeVO> NoticeListTEST(NoticeVO vo, Model model, HttpServletRequest req){
-        List<NoticeVO> list = new ArrayList();
-        Integer cnt = 0;
+    public @ResponseBody List<NoticeVO> NoticeInsert(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeInsert.do?title=TestTitle22&contents=testContents22&gtype=30&regid=system2
         try{
-            logger.info("-------------------------------------------Start");
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
             if(vo.getTitle()!=null && !"".equals(vo.getTitle()) ){
                 noticeService.insertNotice(vo);
             }
-            logger.info("-------------------------------------------list:"+list.toString());
+            logger.info("\n-------------------------------------------End");
         }catch(Exception e){
             e.printStackTrace();
         }
-        
+        return getNoticeList(new NoticeVO());
+    }
+    @RequestMapping(path="/NOTICE/NoticeUpdate.do")
+    public @ResponseBody List<NoticeVO> NoticeUpdate(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeUpdate.do?notice_seq=5&title=TestTitle&contents=testContents&gtype=20&regid=test
         try{
-            list = noticeService.selectNoticeList(new NoticeVO());
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
+            if(vo.getNotice_seq()!=null && vo.getNotice_seq()>0 ){
+                noticeService.updateNotice(vo);
+            }
+            logger.info("\n-------------------------------------------End");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return getNoticeList(new NoticeVO());
+    }
+
+
+    @RequestMapping(path="/NOTICE/NoticeDelete.do")
+    public @ResponseBody List<NoticeVO> NoticeDelete(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeDelete.do?notice_seq=5&useyn=N
+        try{
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
+            if(vo.getNotice_seq()!=null && vo.getNotice_seq()>0 ){
+                if(!"Y".equals(vo.getUseyn())) vo.setUseyn("N");
+                noticeService.deleteNotice(vo);
+            }
+            logger.info("\n-------------------------------------------End");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return getNoticeList(new NoticeVO());
+    }
+    
+    
+    private List<NoticeVO> getNoticeList(NoticeVO vo){
+        List<NoticeVO> list = new ArrayList();
+        try{
+            list = noticeService.selectNoticeList(vo);
+            System.out.println("전체목록(getNoticeList):");
             if(list!=null){
                 for(int i=0;i<list.size();i++){
                     NoticeVO rec = list.get(i);
@@ -86,6 +125,5 @@ public class NoticeController extends HController {
         }
         return list;
     }
-    
     
 }
