@@ -39,7 +39,7 @@ public interface DincdDAO {
     
     void insertTblDincdInfo(Map<String, Object> map);
         
-    
+    void deleteTblDincdInfo() throws Exception;
     
 
 }
