@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 
-    SQL File Name : xmlname.xm 
+    SQL File Name : NoticeDAO_SQL.xml
     Description : 공지사항 CRUD
     author webpro000
     since 2020. 4. 7.
@@ -9,47 +9,63 @@
     Modification Information
        since          author              description
     ===========    =============    ===========================
-    2020. 4. 7.     webpro000  		   최초 생성
+    2020. 4. 7.     webpro000          최초 생성
 -->
 
 <mapper namespace="com.hpay.notice.service.dao.NoticeDAO">
     <select id="selectNoticeList" parameterType="com.hpay.notice.vo.NoticeVO" resultType="com.hpay.notice.vo.NoticeVO" >
-    <![CDATA[
         select 
             * 
-        from TBL_NOTICE;
-    ]]>  
+        from TBL_NOTICE
+        <include refid="selectWhereInclude"/>
+        order by notice_seq DESC
     </select>
 
     <select id="selectNoticeCount" parameterType="com.hpay.notice.vo.NoticeVO" resultType="int" >
-    <![CDATA[
         select 
             count(*)
-        from TBL_NOTICE;
-    ]]>  
+        from TBL_NOTICE
+        <include refid="selectWhereInclude"/>
     </select>
+    
+    <sql id="selectWhereInclude">
+        WHERE notice_seq>0
+        <if test="notice_seq != null and notice_seq != ''">
+        AND notice_seq = #{notice_seq}
+        </if>
+        <if test="title != null and title != ''">
+        AND title LIKE CONCAT('%',#{title},'%')
+        </if>
+        <if test="contents != null and contents != ''">
+        AND contents LIKE CONCAT('%',#{contents},'%')
+        </if>
+        <if test="gtype != null and gtype != ''">
+        AND gtype = #{gtype}
+        </if>
+    </sql>
+    
     
     <insert id="insertNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
     <![CDATA[
-        insert into public.TBL_NOTICE(title, contents, regid, regdt, uptdt, useyn)
-             values(#{title},#{contents},#{regid},#{regdt},#{uptdt},#{useyn})
-       
+        insert into TBL_NOTICE(title, contents, gtype, regid, regdt, useyn)
+        values(#{title},#{contents},#{gtype},#{regid},now(),#{useyn})
     ]]>  
     </insert>
-    <insert id="updateNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
+    <update id="updateNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
     <![CDATA[
-        update TBL_NOTICE set contents = #{contents}, regid = #{regid}, regdt = #{regdt}, uptdt = #{uptdt}, useyn = #{useyn}
-            where notice_seq = #{notice_seq} 
-                and title = #{title}
+        update TBL_NOTICE 
+        set title = #{title}, contents = #{contents}, gtype = #{gtype}
+        , regid = #{regid}, uptdt = now(), useyn = #{useyn}
+        where notice_seq = #{notice_seq}
       ]]>  
-    </insert>
+    </update>
     
-    <delete id="deleteNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
+    <update id="deleteNotice" parameterType="com.hpay.notice.vo.NoticeVO" >
     <![CDATA[
-        delete from TBL_NOTICE
-            where notice_seq = #{notice_seq} 
-                and title = #{title}
+        update TBL_NOTICE 
+        set useyn = "N"
+        where notice_seq = #{notice_seq}
       ]]>  
-    </delete>
+    </update>
     
 </mapper>

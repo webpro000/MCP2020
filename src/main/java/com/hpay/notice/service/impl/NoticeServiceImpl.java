@@ -1,14 +1,10 @@
 package com.hpay.notice.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import javax.annotation.Resource;
 
 import able.com.service.HService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hpay.notice.service.dao.NoticeDAO;
@@ -36,8 +32,6 @@ import com.hpay.notice.vo.NoticeVO;
 @Service("noticeService")
 public class NoticeServiceImpl  extends HService implements NoticeService{
     
-    //@Resource(name="noticeDAO")
-    //@Autowired
     @Resource(name="noticeDAO")
     private NoticeDAO noticeDAO;
     
@@ -50,9 +44,6 @@ public class NoticeServiceImpl  extends HService implements NoticeService{
        * @throws Exception
        */
       public List<NoticeVO> selectNoticeList(NoticeVO vo) throws Exception{
-//          List list = new ArrayList();
-//          //list.add(vo);
-//          return list;
           return noticeDAO.selectNoticeList(vo);
       }
       
@@ -65,7 +56,20 @@ public class NoticeServiceImpl  extends HService implements NoticeService{
        * @throws Exception
        */
       public int selectNoticeCount(NoticeVO vo) throws Exception{
-//          return 1;
           return noticeDAO.selectNoticeCount(vo);
       }
+      
+      
+      public void insertNotice(NoticeVO vo) throws Exception{
+          noticeDAO.insertNotice(vo);
+      }
+      public void updateNotice(NoticeVO vo) throws Exception{
+          noticeDAO.updateNotice(vo);
+      }
+      public void deleteNotice(NoticeVO vo) throws Exception{
+          noticeDAO.deleteNotice(vo);
+      }
+      
+      
+      
 }

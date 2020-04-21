@@ -17,7 +17,7 @@ import java.sql.Date;
  * <pre>
  *     since          author              description
  *  ===========    =============    ===========================
- *  2020. 4. 7.     webpro000     	최초 생성
+ *  2020. 4. 7.     webpro000       최초 생성
  * </pre>
  */
 
@@ -25,11 +25,21 @@ public class NoticeVO {
     private Integer notice_seq;
     private String title;
     private String contents;
+    private Integer gtype=0;
     private String regid = "system";
     private Date regdt;
     private Date uptdt;
     private String useyn = "Y";
     
+    
+//    /**
+//     * Statements
+//     *
+//     */
+//    public NoticeVO() {
+//        super();
+//        // TODO Auto-generated constructor stub
+//    }
     /**
      * @return the notice_seq
      */
@@ -113,6 +123,26 @@ public class NoticeVO {
      */
     public void setUseyn(String useyn) {
         this.useyn = useyn;
+    }
+    /**
+     * @return the gtype
+     */
+    public Integer getGtype() {
+        return gtype;
+    }
+    /**
+     * @param gtype the gtype to set
+     */
+    public void setGtype(Integer gtype) {
+        this.gtype = gtype;
+    }
+    /*
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "NoticeVO [notice_seq=" + notice_seq + ", title=" + title + ", contents=" + contents + ", gtype=" + gtype
+                + ", regid=" + regid + ", regdt=" + regdt + ", uptdt=" + uptdt + ", useyn=" + useyn + "]";
     }
     
     

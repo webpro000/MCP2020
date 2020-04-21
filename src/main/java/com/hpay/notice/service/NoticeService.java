@@ -28,7 +28,9 @@ public interface NoticeService {
     public List<NoticeVO> selectNoticeList(NoticeVO vo) throws Exception;
     public int selectNoticeCount(NoticeVO vo) throws Exception;
     
-    
+    public void insertNotice(NoticeVO vo) throws Exception;
+    public void updateNotice(NoticeVO vo) throws Exception;
+    public void deleteNotice(NoticeVO vo) throws Exception;
     
     
 }
