@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hpay.icps.service.StoreDeletedService;
-//import com.hpay.notice.service.dao.NoticeDAO;
 import com.hpay.notice.service.NoticeService;
 import com.hpay.notice.vo.NoticeVO;
 
@@ -36,40 +34,95 @@ import com.hpay.notice.vo.NoticeVO;
  *     since          author              description
  *  ===========    =============    ===========================
  *  2020. 4. 7.     webpro000     	최초 생성
+ *  2020. 4. 22.    webpro000       공지사항 CRUD
  * </pre>
  */
-
 @Controller
 public class NoticeController extends HController {
 
-    @Resource(name="storeDeletedService")
-    private StoreDeletedService storeDeletedService;
-    
     @Resource(name="noticeService")
     private NoticeService noticeService;
     
     @RequestMapping(path="/NOTICE/NoticeList.do")
-    public @ResponseBody List<NoticeVO> selectNoticeList(NoticeVO vo, Model model, HttpServletRequest req){
-        //NoticeVO vo = new NoticeVO();
+    public @ResponseBody List<NoticeVO> NoticeList(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeList.do
+        //http://localhost:8080/NOTICE/NoticeList.do?title=S&useyn=Y
         List<NoticeVO> list = new ArrayList();
         Integer cnt = 0;
         try{
-            logger.info("-------------------------------------------Start");
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
             cnt = noticeService.selectNoticeCount(vo);
-            logger.info("-------------------------------------------cnt:"+cnt);
+            logger.info("\n-------------------------------------------cnt:"+cnt);
             list = noticeService.selectNoticeList(vo);
-            logger.info("-------------------------------------------list:"+list.toString());
+            logger.info("\n-------------------------------------------list:"+list.toString());
         }catch(Exception e){
             e.printStackTrace();
         }
         return list;
     }
     
-    @RequestMapping(value="/cmdHpayDelStoreSend2.do", method=RequestMethod.GET, produces="application/json;charset=UTF-8")
-    public @ResponseBody String delstore1() {        
-        return storeDeletedService.sendDeletedStoreInfoCompareWithRecentDelta();
+    @RequestMapping(path="/NOTICE/NoticeInsert.do")
+    public @ResponseBody List<NoticeVO> NoticeInsert(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeInsert.do?title=TestTitle22&contents=testContents22&gtype=30&regid=system2
+        try{
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
+            if(vo.getTitle()!=null && !"".equals(vo.getTitle()) ){
+                noticeService.insertNotice(vo);
+            }
+            logger.info("\n-------------------------------------------End");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return getNoticeList(new NoticeVO());
+    }
+    @RequestMapping(path="/NOTICE/NoticeUpdate.do")
+    public @ResponseBody List<NoticeVO> NoticeUpdate(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeUpdate.do?notice_seq=5&title=TestTitle&contents=testContents&gtype=20&regid=test
+        try{
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
+            if(vo.getNotice_seq()!=null && vo.getNotice_seq()>0 ){
+                noticeService.updateNotice(vo);
+            }
+            logger.info("\n-------------------------------------------End");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return getNoticeList(new NoticeVO());
+    }
+
+
+    @RequestMapping(path="/NOTICE/NoticeDelete.do")
+    public @ResponseBody List<NoticeVO> NoticeDelete(NoticeVO vo, Model model, HttpServletRequest req){
+        //http://localhost:8080/NOTICE/NoticeDelete.do?notice_seq=5&useyn=N
+        try{
+            logger.info("\n-------------------------------------------Start:\n"+vo.toString());
+            if(vo.getNotice_seq()!=null && vo.getNotice_seq()>0 ){
+                if(!"Y".equals(vo.getUseyn())) vo.setUseyn("N");
+                noticeService.deleteNotice(vo);
+            }
+            logger.info("\n-------------------------------------------End");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return getNoticeList(new NoticeVO());
     }
     
     
+    private List<NoticeVO> getNoticeList(NoticeVO vo){
+        List<NoticeVO> list = new ArrayList();
+        try{
+            list = noticeService.selectNoticeList(vo);
+            System.out.println("전체목록(getNoticeList):");
+            if(list!=null){
+                for(int i=0;i<list.size();i++){
+                    NoticeVO rec = list.get(i);
+                    System.out.println(rec);
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
     
 }
