@@ -1,28 +1,25 @@
 --------------------------------------------------------------------- Sequence
-CREATE SEQUENCE public.seq_hpay_notice
+CREATE SEQUENCE public.seq_hpay_tblnotice
 INCREMENT 1
 START 1;
 
-ALTER SEQUENCE public.seq_hpay_notice
+ALTER SEQUENCE public.seq_hpay_tblnotice
 OWNER TO hpay;
 
 --------------------------------------------------------------------- Table
-CREATE TABLE public.notice
+CREATE TABLE public.tbl_notice
 (
-    notice_seq integer DEFAULT nextval('seq_hpay_notice'::regclass),
+    notice_seq integer DEFAULT nextval('seq_hpay_tblnotice'::regclass),
     title character varying(100) COLLATE pg_catalog."default",
     contents character varying(4000) COLLATE pg_catalog."default",
+    gtype integer,
     regid character varying COLLATE pg_catalog."default",
     regdt timestamp with time zone,
     uptdt timestamp with time zone,
     useyn character varying(1) DEFAULT 'Y'
 );
 
-ALTER TABLE public.notice
-    ADD COLUMN gtype integer;
-ALTER TABLE public.notice
-    RENAME TO tbl_notice;
---------------------------------------------------------------------- Files
+--------------------------------------------------------------------- 프로그램목록
 \resources\sqlmap\com\hpay\notice\NoticeDAO_SQL.xml
 com\hpay\notice\vo\NoticeVO.java
 com\hpay\notice\service\dao\NoticeDAO.java
