@@ -252,17 +252,14 @@ public class DiningCodeTestContoller extends HController {
             input.put("uptdt",additional_data.get(0).get("uptdt"));
                     
            dincdService.insertTblDincdInfo(input);   //insertDincdList 서비스 호출.  
-                
+     
          }
         }catch(Exception e){
             e.printStackTrace();
         }
         
         return ReturnJson;
-        
-       
-        
-        
+   
     }
 }
   
