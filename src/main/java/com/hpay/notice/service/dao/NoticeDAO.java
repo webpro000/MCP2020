@@ -25,7 +25,6 @@ import com.hpay.notice.vo.NoticeVO;
  *  2020. 4. 22.    webpro000       공지사항 CRUD
  * </pre>
  */
-
 @Mapper("noticeDAO")
 public interface NoticeDAO {
     List<NoticeVO> selectNoticeList(NoticeVO vo) throws Exception;

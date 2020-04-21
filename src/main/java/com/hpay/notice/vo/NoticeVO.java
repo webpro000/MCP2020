@@ -21,7 +21,6 @@ import java.sql.Date;
  *  2020. 4. 22.    webpro000       공지사항 CRUD
  * </pre>
  */
-
 public class NoticeVO {
     private Integer notice_seq;
     private String title;
