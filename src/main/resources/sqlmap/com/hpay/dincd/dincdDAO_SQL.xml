@@ -9,9 +9,9 @@
     ==========  =======  ========   ==============
     2019.12.04  ONESUN   1.0         최초 생성 
 -->
-<mapper namespace="com.hpay.dincd.service.dao.DincdDAO">
+<mapper namespace="com.hpay.diningcd.service.dao.DincdDAO">
     
-  <resultMap id="DinocdVO" type="com.hpay.dincd.vo.DincdVO">
+  <resultMap id="DinocdVO" type="com.hpay.diningcd.vo.DincdVO">
         <result property="businessId" column="business_id"/> 
         <result property="name" column="name"/> 
         <result property="address" column="address"/> 
@@ -51,23 +51,7 @@
                     ,telephone 
                     ,longitude 
                     ,latitude 
-                    ,avg_rating 
-                    ,ai_score 
-                    ,open_hour 
-                    ,rep_photo 
-                    ,menu_photo 
-                    ,area 
-                    ,r_like_count 
-                    ,rep_food_keyword 
-                    ,rep_keyword 
-                    ,taste_rating 
-                    ,price_rating 
-                    ,service_rating 
-                    ,visit_purpose
-                    ,facility 
-                    ,atmosphere 
-                    ,regdt 
-                    ,uptdt     
+                     
                 )
             VALUES            
                 (   
@@ -78,29 +62,13 @@
                     ,#{telephone}                   
                     ,#{longitude}
                     ,#{latitude}
-                    ,#{avg_rating}
-                    ,#{ai_score}
-                    ,#{open_hour}                   
-                    ,#{rep_photo}
-                    ,#{menu_photo}
-                    ,#{area}
-                    ,#{r_like_count}
-                    ,#{rep_food_keyword}                   
-                    ,#{rep_keyword}
-                    ,#{taste_rating}
-                    ,#{price_rating}
-                    ,#{service_rating}
-                    ,#{visit_purpose}                   
-                    ,#{facility}
-                    ,#{atmosphere}
-                    ,#{regdt}
-                    ,#{uptdt}        
+                      
                 )   
     </insert>
    
     <delete id="deleteTblDincdInfo">
     <![CDATA[
-        DELETE FROM tbl_dincd_info_tmp
+        DELETE FROM tbl_dincd_info
     ]]>             
    </delete>
    

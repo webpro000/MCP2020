@@ -37,6 +37,20 @@ ALTER TABLE public."tbl_dincd_info"
 COMMENT ON TABLE public."tbl_dincd_info"
     IS '맛집 다이닝코드';
 
+INSERT INTO tbl_dincd_info(
+	business_id, name, address, telephone, longitude, latitude
+	, avg_rating, ai_score, open_hour, rep_photo, menu_photo, area
+	, r_like_count, rep_food_keyword, rep_keyword, taste_rating, price_rating, service_rating
+	, visit_purpose, facility, atmosphere, regdt, uptdt)
+	VALUES (100, 'test식당', '주소', '111-222-3333', 126.835640, 37.317940
+			, 4, 43, '영업시간:오전10:00~오후11:00', null, null, '경기'
+			, 11, '초밥,단무지', null, 3.6, 3.0, 3.0
+			, null, null, null, now(),null);
+			
+commit;
+
+
+
 CREATE TABLE TBL_DINCD_INFO_TMP AS SELECT * FROM TBL_DINCD_INFO
 	
 --------------------------------------------------------------------- 프로그램목록
@@ -46,5 +60,17 @@ com\hpay\dincd\service\impl\DincdServiceImpl.java
 com\hpay\dincd\service\vo\DincdJsonVO.java
 com\hpay\dincd\web\DiningCodeTestContoller.java
 com\hpay\dincd\dincdDAO_SQL.xml
-com\hpay\dincd\vo\DincdVO2.java
+com\hpay\diningcd\vo\DincdVO.java
+com\hpay\diningcd\vo\DincdVO2.java
+com\hpay\diningcd\vo\DincdJsonVO.java
+com\hpay\diningcd\vo\Item_additional.java
+com\hpay\diningcd\vo\Item_basic.java
+com\hpay\diningcd\vo\Item.java
+
+--------------------------------------------------------------------- 기본요건
+
+아직 정리 안됨.
+
+
+
 	

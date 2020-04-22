@@ -1,4 +1,4 @@
-package com.hpay.dincd.vo;
+package com.hpay.diningcd.vo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,35 +9,35 @@ import java.util.Map;
  * Statements
  * </pre>
  *
- * @ClassName   : DinsptVO.java
+ * @ClassName   : DincdJsonVO.java
  * @Description : 클래스 설명을 기술합니다.
  * @author 김진우
- * @since 2020. 4. 14.
+ * @since 2020. 4. 16.
  * @version 1.0
  * @see
  * @Modification Information
  * <pre>
  *     since          author              description
  *  ===========    =============    ===========================
- *  2020. 4. 14.     김진우     	최초 생성
+ *  2020. 4. 16.     김진우     	최초 생성
  * </pre>
  */
 
-public class DinsptVO {
-    private int business_id = 0;     //결과코드
+public class DincdJsonVO {
+    private int businessId = 0;
     private List<Map<String,Object>> basic_data = new ArrayList();      //결과메세지
     private List<Map<String,Object>> additionnal_data = new ArrayList();
     /**
-     * @return the business_id
+     * @return the businessId
      */
-    public int getBusiness_id() {
-        return business_id;
+    public int getBusinessId() {
+        return businessId;
     }
     /**
-     * @param business_id the business_id to set
+     * @param businessId the businessId to set
      */
-    public void setBusiness_id(int business_id) {
-        this.business_id = business_id;
+    public void setBusinessId(int businessId) {
+        this.businessId = businessId;
     }
     /**
      * @return the basic_data
@@ -64,4 +64,5 @@ public class DinsptVO {
         this.additionnal_data = additionnal_data;
     }
     
+
 }

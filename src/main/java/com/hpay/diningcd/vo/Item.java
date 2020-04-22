@@ -1,4 +1,4 @@
-package com.hpay.dincd.vo;
+package com.hpay.diningcd.vo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,10 +25,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  * </pre>
  */
 
-@XmlAccessorType(XmlAccessType.NONE)
 public class Item {
     
-    @XmlAttribute               // 속성
+              // 속성
     private int businessId = 0;
 
     /**
