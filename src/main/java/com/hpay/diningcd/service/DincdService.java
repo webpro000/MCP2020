@@ -1,9 +1,9 @@
-package com.hpay.dincd.service;
+package com.hpay.diningcd.service;
 
 import java.util.Map;
 
 import com.hpay.common.vo.HpayLogVO;
-import com.hpay.dincd.vo.DincdVO;
+import com.hpay.diningcd.vo.DincdVO;
 
 /**
  * <pre>

@@ -40,14 +40,14 @@
     <logger name="com.hpay" level="info">
         <appender-ref ref="fileServer" />
     </logger>
-<!--     
+    
     <logger name="jdbc.splonly" level="debug" />
     <logger name="jdbc.sqltiming" level="info" />
     <logger name="jdbc.audit" level="warn" />
     <logger name="jdbc.resultset" level="error" />
     <logger name="jdbc.resultsettable" level="info" />
     <logger name="jdbc.connection" level="info" />
-     -->
+     
     <logger name="jdbc.splonly" level="console">
         <appender-ref ref="console" />
     </logger>

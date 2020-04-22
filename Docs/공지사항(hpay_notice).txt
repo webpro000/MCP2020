@@ -1,24 +1,25 @@
 --------------------------------------------------------------------- Sequence
-CREATE SEQUENCE public.seq_hpay_notice
+CREATE SEQUENCE public.seq_hpay_tblnotice
 INCREMENT 1
 START 1;
 
-ALTER SEQUENCE public.seq_hpay_notice
+ALTER SEQUENCE public.seq_hpay_tblnotice
 OWNER TO hpay;
 
 --------------------------------------------------------------------- Table
-CREATE TABLE public.notice
+CREATE TABLE public.tbl_notice
 (
-    notice_seq integer DEFAULT nextval('seq_hpay_notice'::regclass),
+    notice_seq integer DEFAULT nextval('seq_hpay_tblnotice'::regclass),
     title character varying(100) COLLATE pg_catalog."default",
     contents character varying(4000) COLLATE pg_catalog."default",
+    gtype integer,
     regid character varying COLLATE pg_catalog."default",
     regdt timestamp with time zone,
     uptdt timestamp with time zone,
     useyn character varying(1) DEFAULT 'Y'
 );
 
---------------------------------------------------------------------- Files
+--------------------------------------------------------------------- 프로그램목록
 \resources\sqlmap\com\hpay\notice\NoticeDAO_SQL.xml
 com\hpay\notice\vo\NoticeVO.java
 com\hpay\notice\service\dao\NoticeDAO.java
@@ -26,3 +27,18 @@ com\hpay\notice\service\NoticeService.java
 com\hpay\notice\service\impl\NoticeServiceImpl.java
 com\hpay\notice\web\NoticeController.java
 
+--------------------------------------------------------------------- 기본요건
+2. (안내)공지사항
+    개발요건
+        - 공지사항 등록 Tool 필요(등록/수정/삭제/리스트)
+        - 요청시 버전 비교 후, 공지 제공
+        * 기존 TPEG 안내공지와 동일하게 등록 및 안내 제공
+        * 버젼 비교 후 변경 시 제공
+        * 플랫폼, 차종, 날씨 등등.
+    참고자료
+        - 기존TPEG_공지사항 구조.xlsx
+    공지 타입(gtype)
+    - (0=일반공지, 8=지도, 10=이벤트)
+    - (21,22=버스 전용차로(별도 프로토콜 존재하면 필요 없음))
+    - 31=플랫폼, 32=차종, 32=날씨
+   

@@ -1,4 +1,4 @@
-package com.hpay.dincd.vo;
+package com.hpay.diningcd.vo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,45 +25,44 @@ import javax.xml.bind.annotation.XmlRootElement;
  * </pre>
  */
 
-@XmlAccessorType(XmlAccessType.NONE)
 public class Item_additional {
     
         
-    @XmlElement
+ 
     float latitude = 0;
-    @XmlElement
+  
     float avgRating = 0;
-    @XmlElement
+   
     float aiScore = 0;
-    @XmlElement
+    
     String openHour = null;
-    @XmlElement
+    
     String repPhoto = null;
-    @XmlElement
+    
     String menuPhoto = null;
-    @XmlElement
+    
     String area = null;
-    @XmlElement
+  
     int rLikeCount = 0;
-    @XmlElement
+    
     String repFoodKeyword = null;
-    @XmlElement
+   
     String repKeyword = null;
-    @XmlElement
+    
     float tasteRating = 0;
-    @XmlElement
+    
     float priceRating = 0;
-    @XmlElement
+   
     float serviceRating = 0;
-    @XmlElement
+   
     String visitPurpose = null;
-    @XmlElement
+   
     String facility = null;
-    @XmlElement
+   
     String atmosphere = null;
-    @XmlElement
+    
     String regdt = null;
-    @XmlElement
+   
     String uptdt = null;
     /**
      * @return the latitude

@@ -1,4 +1,4 @@
-package com.hpay.dincd.service.dao;
+package com.hpay.diningcd.service.dao;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 import able.com.mybatis.Mapper;
 
 import com.hpay.common.vo.HpayLogVO;
-import com.hpay.dincd.vo.DincdVO;
+import com.hpay.diningcd.vo.DincdVO;
 
 /**
  * <pre>

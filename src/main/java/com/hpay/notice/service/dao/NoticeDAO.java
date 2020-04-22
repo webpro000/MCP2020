@@ -22,12 +22,15 @@ import com.hpay.notice.vo.NoticeVO;
  *     since          author              description
  *  ===========    =============    ===========================
  *  2020. 4. 9.     webpro000     	최초 생성
+ *  2020. 4. 22.    webpro000       공지사항 CRUD
  * </pre>
  */
-
 @Mapper("noticeDAO")
 public interface NoticeDAO {
     List<NoticeVO> selectNoticeList(NoticeVO vo) throws Exception;
     int selectNoticeCount(NoticeVO vo) throws Exception;
     
+    public void insertNotice(NoticeVO vo) throws Exception;
+    public void updateNotice(NoticeVO vo) throws Exception;
+    public void deleteNotice(NoticeVO vo) throws Exception;
 }

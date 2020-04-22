@@ -1,4 +1,4 @@
-package com.hpay.dincd.service.impl;
+package com.hpay.diningcd.service.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,9 +10,9 @@ import able.com.service.HService;
 
 import org.springframework.stereotype.Service;
 
-import com.hpay.dincd.service.DincdService;
-import com.hpay.dincd.service.dao.DincdDAO;
-import com.hpay.dincd.vo.DincdVO;
+import com.hpay.diningcd.service.DincdService;
+import com.hpay.diningcd.service.dao.DincdDAO;
+import com.hpay.diningcd.vo.DincdVO;
 
 
 /**

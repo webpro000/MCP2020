@@ -1,4 +1,4 @@
-package com.hpay.dincd.vo;
+package com.hpay.diningcd.vo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -22,19 +22,18 @@ import javax.xml.bind.annotation.XmlElement;
  *  2020. 4. 21.     김진우         최초 생성
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.NONE)
 public class Item_basic {
 
    
-    @XmlElement
+    
     String name = null;
-    @XmlElement
+    
     String address = null;
-    @XmlElement
+    
     String telephone =  null;
-    @XmlElement
+    
     float longitude = 0;
-    @XmlElement
+    
     float latitude = 0;
     /**
      * @return the name

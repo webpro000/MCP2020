@@ -1,4 +1,4 @@
-package com.hpay.dincd.vo;
+package com.hpay.diningcd.vo;
 
 import java.sql.Date;
 
