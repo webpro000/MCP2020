@@ -50,8 +50,81 @@ INSERT INTO tbl_dincd_info(
 commit;
 
 
+------------------------------------------------------
+CREATE SEQUENCE public.tbl_dincd_menu_seq_seq
+    INCREMENT 1
+    START 1;
 
-CREATE TABLE TBL_DINCD_INFO_TMP AS SELECT * FROM TBL_DINCD_INFO
+ALTER SEQUENCE public.tbl_dincd_menu_seq_seq
+    OWNER TO hpay;
+    
+CREATE TABLE public.tbl_dincd_menu
+(
+    seq integer NOT NULL DEFAULT nextval('tbl_dincd_menu_seq_seq'::regclass),
+    business_id integer,
+    menu character varying(100) COLLATE pg_catalog."default",
+    price real,
+    regdt timestamp with time zone DEFAULT now(),
+    uptdt timestamp with time zone,
+    CONSTRAINT tbl_dincd_menu_pkey PRIMARY KEY (seq),
+    CONSTRAINT tbl_dincd_menu_business_id_fkey FOREIGN KEY (business_id)
+        REFERENCES public.tbl_dincd_info (business_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+
+------------------------------------------------------ 맛집 리뷰
+CREATE SEQUENCE public.tbl_dincd_review_seq
+    INCREMENT 1
+    START 1;
+
+ALTER SEQUENCE public.tbl_dincd_review_seq
+    OWNER TO hpay;
+
+CREATE TABLE public.tbl_dincd_review
+(
+    seq integer NOT NULL DEFAULT nextval('tbl_dincd_review_seq'::regclass),
+    business_id integer,
+    user_name character varying(50),
+    user_profile_url character varying(500),
+    user_review_count integer,
+    user_review_like_count integer,
+    review_like_count integer,
+    u_follower_count integer,
+    review_reg_time character varying(50),
+    user_grade character varying(50),
+    review_txt character varying(4000),
+    r_rating integer,
+    r_taste_rating integer,
+    r_price_rating integer,
+    r_service_rating integer,
+    r_visit_purpose character varying(1000),
+    r_facility character varying(1000),
+    r_atmosphere character varying(1000),
+    photo_generic character varying(1000),
+    photo_info character varying(1000),
+    ordered_food character varying(200),
+    regdt timestamp with time zone DEFAULT now(),
+    uptdt timestamp with time zone,
+    PRIMARY KEY (seq),
+    CONSTRAINT tbl_dincd_review_business_id_fkey FOREIGN KEY (business_id)
+        REFERENCES public.tbl_dincd_info (business_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+ALTER TABLE public.tbl_dincd_review
+    OWNER to hpay;
+
+
+
+
+
+
+
+
+-- CREATE TABLE TBL_DINCD_INFO_TMP AS SELECT * FROM TBL_DINCD_INFO
 	
 --------------------------------------------------------------------- 프로그램목록
 com\hpay\dincd\service\DincdService.java
