@@ -1,0 +1,45 @@
+[{
+"business_id":145842
+,"basic_data":{
+	"name":"명동교자"
+	,"address":"서울특별시 중구 명동2가 25-2"
+	,"telephone":"02-776-5348"
+	,"longitude":"126.985757"
+	,"latitude":"37.562571"
+	}
+,"additional_data":{
+	"menu":[
+		{"menu":"칼국수","price":"9000"}
+		,{"menu":"만두","price":"10000"}
+		,{"menu":"비빔국수","price":"9000"}
+		,{"menu":"콩국수","price":"9000"}
+		,{"menu":"포장만두","price":"10000"}]
+	,"avg_rating":4.1
+	,"ai_score":100
+	,"open_hour":"매일: 오전 10시 30분 - 오후 9시 30분(설, 추석 명절 당일 휴무)"
+	"rep_photo":[
+		"20200314034334_photo1_3cSsuoMa8pcP.jpg"
+		,"20200314034334_photo2_3cSsuoMa8pcP.jpg"
+		,"20200313050040_photo1_0d263f2f720d.jpg"
+		,"20200313050040_photo2_0d263f2f720d.jpg"
+		,"20200302000225_photo0_L4miF0diqkcW.jpg"
+		]
+	,"menu_photo":[
+		"20200119021651906_menu_981262810032.jpg"
+		,"20200111092747_menu1_1f86fd0f3a30.jpg"
+		,"20191226194016_menu1_a2e1b1990f36.jpg"]
+	,"area":"명동"
+	,"r_like_count":1270
+	,"rep_food_keyword":["칼국수","만두"]
+	,"rep_keyword":["2019대표맛집","수요미식회","원조","혼밥"]
+	,"taste_rating":"3.9"
+	,"price_rating":"3.6"
+	,"service_rating":"3.4"
+	,"visit_purpose":["점심식사","저녁식사","혼밥","데이트","식사모임"]
+	,"facility":["현장대기필요","주차불가","포장가능","모른다","모름"]
+	,"atmosphere":["서민적인","시끌벅적한","푸짐한","가성비좋은","캐주얼한"]
+	}
+
+
+	]
+		

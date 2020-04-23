@@ -1,0 +1,169 @@
+[{
+"business_id":145842
+,"basic_data":{
+	"name":"명동교자"
+	,"address":"서울특별시 중구 명동2가 25-2"
+	,"telephone":"02-776-5348"
+	,"longitude":"126.985757"
+	,"latitude":"37.562571"
+	}
+,"additional_data":{
+	"menu":[
+		{"menu":"칼국수","price":"9000"}
+		,{"menu":"만두","price":"10000"}
+		,{"menu":"비빔국수","price":"9000"}
+		,{"menu":"콩국수","price":"9000"}
+		,{"menu":"포장만두","price":"10000"}]
+	,"avg_rating":4.1
+	,"ai_score":100
+	,"open_hour":"매일: 오전 10시 30분 - 오후 9시 30분(설, 추석 명절 당일 휴무)"
+	,"rep_photo":[
+		"20200314034334_photo1_3cSsuoMa8pcP.jpg"
+		,"20200314034334_photo2_3cSsuoMa8pcP.jpg"
+		,"20200313050040_photo1_0d263f2f720d.jpg"
+		,"20200313050040_photo2_0d263f2f720d.jpg"
+		,"20200302000225_photo0_L4miF0diqkcW.jpg"
+		]
+	,"menu_photo":[
+		"20200119021651906_menu_981262810032.jpg"
+		,"20200111092747_menu1_1f86fd0f3a30.jpg"
+		,"20191226194016_menu1_a2e1b1990f36.jpg"]
+	,"area":"명동"
+	,"r_like_count":1270
+	,"rep_food_keyword":["칼국수","만두"]
+	,"rep_keyword":["2019대표맛집","수요미식회","원조","혼밥"]
+	,"taste_rating":"3.9"
+	,"price_rating":"3.6"
+	,"service_rating":"3.4"
+	,"visit_purpose":["점심식사","저녁식사","혼밥","데이트","식사모임"]
+	,"facility":["현장대기필요","주차불가","포장가능","모른다","모름"]
+	,"atmosphere":["서민적인","시끌벅적한","푸짐한","가성비좋은","캐주얼한"]
+	}
+,"blog_data":[{
+	"blog_title":"[서울 나들이] 서울 갈 때마다 찾는 명동 맛집 '명동교자'"
+	,"blog_payload":"SEOUL 명동 맛집 '명동교자' 안녕하세요! 여행블로거 Grace입니다. 이번 서울 나들이에서도 명동교자를 다녀왔어요. 제가 가장 좋아하는 명동 맛집이자, 서울 갈 때마다 들리는 서울 맛집이라고 할까요? 칼국수랑 김치가 너무"
+	,"blogger_name":"STAY GOLD"
+	,"blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=zzzzzangg&logNo=221847953094&redirect=Dlog&widgetTypeCall=true"
+	,"blog_date":"3월 11일"
+	},{
+	"blog_title":"[20191019] 어우씨. 너무 맛있잖아! 명동 칼국수 - 명동 명동교자"
+	,"blog_payload":"토요일. 다른 특별한 계획이 없었다. 별다를 게 없는 주말. 늘 그렇듯이 아침에 주호가 운동하는 한남오거리까지 차로 태워주고 집으로 돌아왔다. 그렇게 또 주말이 지나가나보다 했는데 희연씨가 명동 칼국수를 먹으러"
+	,"blogger_name":"뭘해도 어설픈 남편 그리고 아빠의 일기"
+	,"blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=xdreamx&logNo=221834407396&redirect=Dlog&widgetTypeCall=true"
+	,"blog_date":"3월 2일"
+	},{
+	"blog_title":"명동교자 먹자~~^^"
+	,"blog_payload":"예전 권여사랑 자주가던 명동교자에 갔습니다. 서대문형무소에서 자가용으로 15분걸렸습니다. 주차는 명동성당에 하시면되요^^ 걷자 걷자 찾기는 아주쉬워요~^^ 점심은 피해가시는게 좋아요 늘 줄서니까~~^^♡ 주문했습니다."
+	,"blogger_name":"레브의 세상 이야기..."
+	,"blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=chh0427&logNo=221828712047&redirect=Dlog&widgetTypeCall=true"
+	,"blog_date":"2월 28일"
+	}]
+,"review_data":{
+	"review_count":130
+	,"review_list":[
+		{
+		"user_name":"유히"
+		,"user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dcusers\/profile\/17821\/17127\/17821_17127_1468501707_9409_57878ecbe5bfe.jpg"
+		,"user_review_count":81
+		,"user_review_like_count":316
+		,"review_like_count":3
+		,"u_follower_count":26
+		,"review_reg_time":"3일 전"
+		,"user_grade":"다코미식가"
+		,"review_txt":"우리나라에서 아마도 가장 유명한 칼국수집.\n이곳만의 독특한 마늘김치와 육수 맛이 한결같은 맛을 유지하는 덕에 응대가 그리 친절하지는 않아도 수많은 내국민과 관광객들의 발걸음이 끊이지 않는다.\n강한 한방이 있는 맛. 여전히 맛있습니다."
+		,"r_rating":5
+		,"r_taste_rating":4
+		,"r_price_rating":4
+		,"r_service_rating":3
+		,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,아침식사,간식,아이동반,접대,기념일,모임,회식,남자끼리,점저,친구끼리,여자끼리"
+		,"r_facility":"현장대기필요,주차불가,포장가능,모른다,모름,칸막이,대형룸,1인 테이블,근처 발렛주차,개별룸"
+		,"r_atmosphere":"서민적인,시끌벅적한,푸짐한,가성비좋은,캐주얼한,지역주민이 찾는,깔끔한,이국적\/이색적,숨은맛집,규모가큰,오래된집,격식있는,중년이상이많은,아담한,사람 많은,고급스러운,토속적인,맛집,관광객 많은"
+		,"photo_generic":["20200314034334_photo1_3cSsuoMa8pcP.jpg","20200314034334_photo2_3cSsuoMa8pcP.jpg"]
+		,"photo_info":["20200314034334_photo1_3cSsuoMa8pcP.jpg","20200314034334_photo2_3cSsuoMa8pcP.jpg"]
+		,"ordered_food":"칼국수,교자"
+		},{
+		"user_name":"닥스훈트"
+		,"user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20200201064100_buzzlightyr.jpg"
+		,"user_review_count":27
+		,"user_review_like_count":55
+		,"review_like_count":2
+		,"u_follower_count":0
+		,"review_reg_time":"4일 전"
+		,"user_grade":"일반"
+		,"review_txt":"칼국수 설명에 닭육수래서 기대했는데 고기? 맛에 묻혀서 별 맛이 안나더라고요 ㅠ"
+		,"r_rating":4
+		,"r_taste_rating":3
+		,"r_price_rating":3
+		,"r_service_rating":4
+		,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,아침식사,간식,아이동반,접대,기념일,모임,회식,남자끼리,점저,친구끼리,여자끼리"
+		,"r_facility":"현장대기필요,주차불가,포장가능,모른다,모름,칸막이,대형룸,1인 테이블,근처 발렛주차,개별룸"
+		,"r_atmosphere":"서민적인,시끌벅적한,푸짐한,가성비좋은,캐주얼한,지역주민이 찾는,깔끔한,이국적\/이색적,숨은맛집,규모가큰,오래된집,격식있는,중년이상이많은,아담한,사람 많은,고급스러운,토속적인,맛집,관광객 많은"
+		,"photo_generic":["20200313050040_photo1_0d263f2f720d.jpg","20200313050040_photo2_0d263f2f720d.jpg"]
+		,"photo_info":["20200313050040_photo1_0d263f2f720d.jpg","20200313050040_photo2_0d263f2f720d.jpg"]
+		,"ordered_food":"칼국수,만두"
+		},{
+		"user_name":"mymyjoo","user_profile_url":null,"user_review_count":57,"user_review_like_count":101
+		,"review_like_count":1,"u_follower_count":0,"review_reg_time":"2월 28일","user_grade":"일반"
+		,"review_txt":"항상 맛있다. 친절한 직원분들 덕에 기분까지 좋은곳. 영원해라","r_rating":5,"r_taste_rating":4
+		,"r_price_rating":4,"r_service_rating":4
+		,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,아침식사,간식,아이동반,접대,기념일,모임,회식,남자끼리,점저,친구끼리,여자끼리"
+		,"r_facility":"현장대기필요,주차불가,포장가능,모른다,모름,칸막이,대형룸,1인 테이블,근처 발렛주차,개별룸"
+		,"r_atmosphere":"서민적인,시끌벅적한,푸짐한,가성비좋은,캐주얼한,지역주민이 찾는,깔끔한,이국적\/이색적,숨은맛집,규모가큰,오래된집,격식있는,중년이상이많은,아담한,사람 많은,고급스러운,토속적인,맛집,관광객 많은"
+		,"photo_generic":["20200302000225_photo0_L4miF0diqkcW.jpg","20200302000241_photo1_L4miF0diqkcW.jpg"]
+		,"photo_info":["20200302000225_photo0_L4miF0diqkcW.jpg","20200302000241_photo1_L4miF0diqkcW.jpg"]
+		,"ordered_food":"칼국수,만두"
+		},{
+		"user_name":"Nami Kim"
+		,"user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dcusers\/profile\/10204\/18015\/10204_18015_1488267176_1563_58b527a82633d.jpg"
+		,"user_review_count":16,"user_review_like_count":38,"review_like_count":4,"u_follower_count":0
+		,"review_reg_time":"2월 27일","user_grade":"일반"
+		,"review_txt":"하도 유명하길래 가봤는데 맛있습니다.\n직원분들 친절하신 것 같고 김치 부족해보이면 알아서 주시더라구요.\n매장 넓고 회전율도 좋아서 웨이팅 길지 않아요.\n다만 가성비가 좋은지는 모르겠어요.\n둘이 가서 3개 시키니 국수집에서 3만원이..\n만두 빼고 식사 두개만 시켜도 될것 같아요. 부족하면 밥 말아 먹을 수 있습니다."
+		,"r_rating":4,"r_taste_rating":4,"r_price_rating":3,"r_service_rating":4
+		,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,아침식사,간식,아이동반,접대,기념일,모임,회식,남자끼리,점저,친구끼리,여자끼리"
+		,"r_facility":"현장대기필요,주차불가,포장가능,모른다,모름,칸막이,대형룸,1인 테이블,근처 발렛주차,개별룸"
+		,"r_atmosphere":"서민적인,시끌벅적한,푸짐한,가성비좋은,캐주얼한,지역주민이 찾는,깔끔한,이국적\/이색적,숨은맛집,규모가큰,오래된집,격식있는,중년이상이많은,아담한,사람 많은,고급스러운,토속적인,맛집,관광객 많은"
+		,"photo_generic":["20200227070500949_photo_BW9sDzzXNGz7.jpg","20200227070501007_photo_BW9sDzzXNGz7.jpg","20200227070501055_photo_BW9sDzzXNGz7.jpg"]
+		,"photo_info":["20200227070500949_photo_BW9sDzzXNGz7.jpg","20200227070501007_photo_BW9sDzzXNGz7.jpg","20200227070501055_photo_BW9sDzzXNGz7.jpg"]
+		,"ordered_food":"칼국수,비빔국수,만두"
+		},{
+		"user_name":"rgrg"
+		,"user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20200307092516_25886d9cb10a.jpg"
+		,"user_review_count":14
+		,"user_review_like_count":20
+		,"review_like_count":0
+		,"u_follower_count":1
+		,"review_reg_time":"2월 27일"
+		,"user_grade":"일반"
+		,"review_txt":"대체 1위인 이유를 모르겠네요 평범한 칼국수입니다 기름져서 맛있지도 않고 같이나오는 김치도 너무 짜기만해요 시장에서 파는 3천원짜리 칼국수가 더 있있어요"
+		,"r_rating":2
+		,"r_taste_rating":3
+		,"r_price_rating":2
+		,"r_service_rating":2
+		,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,아침식사,간식,아이동반,접대,기념일,모임,회식,남자끼리,점저,친구끼리,여자끼리"
+		,"r_facility":"현장대기필요,주차불가,포장가능,모른다,모름,칸막이,대형룸,1인 테이블,근처 발렛주차,개별룸"
+		,"r_atmosphere":"서민적인,시끌벅적한,푸짐한,가성비좋은,캐주얼한,지역주민이 찾는,깔끔한,이국적\/이색적,숨은맛집,규모가큰,오래된집,격식있는,중년이상이많은,아담한,사람 많은,고급스러운,토속적인,맛집,관광객 많은"
+		,"photo_generic":[]
+		,"photo_info":[]
+		,"ordered_food":"칼국수"
+		}
+		]
+		}
+		},{"business_id":307644
+		,"basic_data":{
+			"name":"우래옥","address":"서울특별시 중구 주교동 118-1","telephone":"02-2265-0151","longitude":"126.998737","latitude":"37.568190"},"additional_data":{"menu":[{"menu":"평양냉면","price":"14000"},{"menu":"비빔냉면","price":"14000"},{"menu":"불고기(150g)","price":"33000"},{"menu":"생등심","price":"55000"},{"menu":"장국밥","price":"12000"},{"menu":"육개장","price":"13000"},{"menu":"갈비탕","price":"15000"},{"menu":"온면","price":"14000"},{"menu":"김치말이냉면","price":"14000"},{"menu":"육회","price":"57000"},{"menu":"불고기","price":"35000"},{"menu":"소금구이","price":"59000"},{"menu":"갈비","price":"51000"},{"menu":"대긴갈비","price":"55000"},{"menu":"허밑구이","price":"33000"},{"menu":"허밑소금구이","price":"33000"},{"menu":"염통구이","price":"33000"},{"menu":"육회 150g","price":"57000"},{"menu":"육회 100g","price":"38000"},{"menu":"불고기 150g","price":"35000"}],"avg_rating":4.3,"ai_score":92,"open_hour":"매일: 오전 11시 30분 - 오후 9시 30분,휴무일: 매주 월요일(명절 휴무)","rep_photo":["20200228095522_photo01_a7f504a8f69e.jpg","20200207053850_photo1_a70c16cb4692.jpg","20200207053850_photo2_a70c16cb4692.jpg","20200202051506_photo1_37dba9476e15.jpg","20200202051506_photo2_37dba9476e15.jpg"],"menu_photo":["20200207053854_menu1_a70c16cb4692.jpg","20200202051510_menu1_37dba9476e15.jpg","20200202051510_menu2_37dba9476e15.jpg"],"area":"을지로","r_like_count":853,"rep_food_keyword":["평양냉면","불고기"],"rep_keyword":["2019대표맛집","수요미식회","노포","접대"],"taste_rating":"4.1","price_rating":"2.8","service_rating":"3.5","visit_purpose":["점심식사","저녁식사","가족외식","식사모임","데이트"],"facility":["무료주차","발렛주차","개별룸","대형룸","현장대기필요"],"atmosphere":["고급스러운","격식있는","서민적인","깔끔한","시끌벅적한"]},"blog_data":[{"blog_title":"(주교동) 우래옥","blog_payload":"점심을 굶어서..출근하기 전에 들린 우래옥 따뜻한 국물이 먹고 싶어서 육개장으 시켰다 원래 육개장을 사 먹는 스타일이 아닌데.. 따뜻한 면수 오늘은 면수가 조금 엷다.. 기본 찬으로 나온 깍두기랑 배추김치 맛있기는","blogger_name":"긔차니즘","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=ubtcho&logNo=221827868726&redirect=Dlog&widgetTypeCall=true","blog_date":"3월 2일"},{"blog_title":"(주교동) 우래옥","blog_payload":"출근길에 들린 주교동 우래옥 겨울이라 그런지 대기줄은 없었다.. 둘이오면 불고기나 대긴갈비 먹으면 좋은데.. 혼자라 물냉 면수한잔 하면서 주문하고 기다림 물냉이 나왔다..육수가 내가 좋아하는 의정부보다는","blogger_name":"긔차니즘","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=ubtcho&logNo=221817306655&redirect=Dlog&widgetTypeCall=true","blog_date":"2월 25일"},{"blog_title":"평양냉면의 성지,우래옥@종로, 을지로","blog_payload":"서프라이즈 가게 찾아가기 시리즈! 이번에는 교외로 나가지않고 시내로 들어왔어요! ㅎ 대박ㅋㅋㅋ 우래옥이라는 유명한 평양냉면집이에요~ 을밀대와 봉피양 그리고 우래옥 이 세집이 평양냉면 삼대천왕이라던데..","blogger_name":"울.빛.사.랑","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=redzoa79&logNo=221822687116&redirect=Dlog&widgetTypeCall=true","blog_date":"2월 25일"}],"review_data":{"review_count":77,"review_list":[{"user_name":"Rkd ","user_profile_url":null,"user_review_count":1,"user_review_like_count":3,"review_like_count":3,"u_follower_count":0,"review_reg_time":"2월 28일","user_grade":"일반","review_txt":"주차 도와주시는 분이 마스크를 안하고 다가오셨다. 그리고 차 키 놓고 식당에 들어가면 된다고 하시면서 내 차에 타시고 운전을 하셨다. 다른 때라면 괜찮지만, 요즘 같은 때는 이러면 안 될 듯 싶어, 식당안에 계시는 매니저\/주인(?)에게 주차 하시는 직원분들 마스크 안 챙겨 주시냐고 하니, 그 매니저가 말을 끊고 얼굴을 찡그리며 신경질을 냈다. \r\n냉면은 맛있지만, 보건의식이 없고 매니저가 손님에게 무례하다. \r\n","r_rating":1,"r_taste_rating":4,"r_price_rating":2,"r_service_rating":1,"r_visit_purpose":"점심식사,저녁식사,가족외식,식사모임,데이트,접대,술모임,혼밥,기념일,회식,모임,남자끼리,아이동반,여자끼리,평양냉면,간식,비추,파인다이닝,차모임","r_facility":"무료주차,발렛주차,개별룸,대형룸,현장대기필요,예약필요,냉면중에 넘버원","r_atmosphere":"고급스러운,격식있는,서민적인,깔끔한,시끌벅적한,지역주민이 찾는,캐주얼한,푸짐한,규모가큰,조용한,중년이상이많은,토속적인,오래된집,젊은사람이많은,복고풍,가족모임많음,경관\/야경이 좋은,이국적\/이색적,대기는 기본,클래식함","photo_generic":["20200228095522_photo01_a7f504a8f69e.jpg"],"photo_info":["20200228095522_photo01_a7f504a8f69e.jpg"],"ordered_food":"냉면,사리추가"
+		},{
+		"user_name":"justin"
+		,"user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20200223124127_kimin1224.jpg","user_review_count":8,"user_review_like_count":3,"review_like_count":0,"u_follower_count":0,"review_reg_time":"2월 24일","user_grade":"일반","review_txt":"내 입맛에는 최고의 냉면.","r_rating":5,"r_taste_rating":4,"r_price_rating":3,"r_service_rating":4,"r_visit_purpose":"점심식사,저녁식사,가족외식,식사모임,데이트,접대,술모임,혼밥,기념일,회식,모임,남자끼리,아이동반,여자끼리,평양냉면,간식,비추,파인다이닝,차모임","r_facility":"무료주차,발렛주차,개별룸,대형룸,현장대기필요,예약필요,냉면중에 넘버원","r_atmosphere":"고급스러운,격식있는,서민적인,깔끔한,시끌벅적한,지역주민이 찾는,캐주얼한,푸짐한,규모가큰,조용한,중년이상이많은,토속적인,오래된집,젊은사람이많은,복고풍,가족모임많음,경관\/야경이 좋은,이국적\/이색적,대기는 기본,클래식함","photo_generic":[],"photo_info":[],"ordered_food":"물냉면,불고기"},{"user_name":"요리보고 조리봐도","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20191221015305_E7hC93fQ5Col.jpg","user_review_count":87,"user_review_like_count":28,"review_like_count":1,"u_follower_count":2,"review_reg_time":"2월 10일","user_grade":"일반","review_txt":"역시 우래옥. 맛은 기가 막혀요. 단연 최고입니다. 밀도 있고 단백한 육향과 시원한 육수, 면의 식감도 단연최고. 하지만 가격이 비쌈","r_rating":5,"r_taste_rating":4,"r_price_rating":2,"r_service_rating":3,"r_visit_purpose":"점심식사,저녁식사,가족외식,식사모임,데이트,접대,술모임,혼밥,기념일,회식,모임,남자끼리,아이동반,여자끼리,평양냉면,간식,비추,파인다이닝,차모임","r_facility":"무료주차,발렛주차,개별룸,대형룸,현장대기필요,예약필요,냉면중에 넘버원","r_atmosphere":"고급스러운,격식있는,서민적인,깔끔한,시끌벅적한,지역주민이 찾는,캐주얼한,푸짐한,규모가큰,조용한,중년이상이많은,토속적인,오래된집,젊은사람이많은,복고풍,가족모임많음,경관\/야경이 좋은,이국적\/이색적,대기는 기본,클래식함","photo_generic":[],"photo_info":[],"ordered_food":"물냉면"
+		},{
+		"user_name":"발라롱쩨졔","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20190224110129_hyae3925.jpg","user_review_count":228,"user_review_like_count":175,"review_like_count":2,"u_follower_count":3,"review_reg_time":"2월 7일","user_grade":"일반","review_txt":"정말 너무 비싼데... 그가격만큼 못하는 집이라 아쉬워요. 왜이렇게 유명한지 모르겟음","r_rating":2,"r_taste_rating":2,"r_price_rating":2,"r_service_rating":3,"r_visit_purpose":"점심식사,저녁식사,가족외식,식사모임,데이트,접대,술모임,혼밥,기념일,회식,모임,남자끼리,아이동반,여자끼리,평양냉면,간식,비추,파인다이닝,차모임","r_facility":"무료주차,발렛주차,개별룸,대형룸,현장대기필요,예약필요,냉면중에 넘버원","r_atmosphere":"고급스러운,격식있는,서민적인,깔끔한,시끌벅적한,지역주민이 찾는,캐주얼한,푸짐한,규모가큰,조용한,중년이상이많은,토속적인,오래된집,젊은사람이많은,복고풍,가족모임많음,경관\/야경이 좋은,이국적\/이색적,대기는 기본,클래식함","photo_generic":["20200207053850_photo1_a70c16cb4692.jpg","20200207053850_photo2_a70c16cb4692.jpg"],"photo_info":["20200207053850_photo1_a70c16cb4692.jpg","20200207053850_photo2_a70c16cb4692.jpg"],"ordered_food":"갈비탕"
+		},{
+		"user_name":"YJKIM","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20181226072115_37dba9476e15.jpg","user_review_count":143,"user_review_like_count":123,"review_like_count":5,"u_follower_count":7,"review_reg_time":"2월 2일","user_grade":"일반","review_txt":"고기육수의 고기향이 진해요\n물냉면 육수 한모금이 너무 시원한것👍🏻👍🏻\n비빔냉면 양념도 엄청 맛있고\n양도 푸짐하니 좋아요","r_rating":5,"r_taste_rating":4,"r_price_rating":3,"r_service_rating":4,"r_visit_purpose":"점심식사,저녁식사,가족외식,식사모임,데이트,접대,술모임,혼밥,기념일,회식,모임,남자끼리,아이동반,여자끼리,평양냉면,간식,비추,파인다이닝,차모임","r_facility":"무료주차,발렛주차,개별룸,대형룸,현장대기필요,예약필요,냉면중에 넘버원","r_atmosphere":"고급스러운,격식있는,서민적인,깔끔한,시끌벅적한,지역주민이 찾는,캐주얼한,푸짐한,규모가큰,조용한,중년이상이많은,토속적인,오래된집,젊은사람이많은,복고풍,가족모임많음,경관\/야경이 좋은,이국적\/이색적,대기는 기본,클래식함","photo_generic":["20200202051506_photo1_37dba9476e15.jpg","20200202051506_photo2_37dba9476e15.jpg"],"photo_info":["20200202051506_photo1_37dba9476e15.jpg","20200202051506_photo2_37dba9476e15.jpg"],"ordered_food":"물냉면,비빔냉면"}]		}
+		},{"business_id":348841
+		,"basic_data":{"name":"정돈","address":"서울특별시 종로구 명륜4가 107 지하1층","telephone":"02-987-0924","longitude":"127.001091","latitude":"37.581813"},"additional_data":{"menu":[{"menu":"등심돈카츠 (220g)","price":"13000"},{"menu":"안심돈카츠 (220g)","price":"14000"},{"menu":"등심+안심 돈카츠","price":"18000"},{"menu":"스페셜 등심 돈카츠 (230g)","price":"16000"},{"menu":"프리미엄 특 목등심 돈카츠 (300g)","price":"23000"},{"menu":"새우+등심 돈카츠 (2p+220g)","price":"21000"},{"menu":"새우+안심 돈카츠 (2p+220g)","price":"22000"},{"menu":"등심 돈카츠 카레 (120g)","price":"13000"},{"menu":"안심돈까스 카레","price":"14000"},{"menu":"새우튀김 카레 (새우2P)","price":"17000"},{"menu":"치킨가라아게 카레 (가라아게6P)","price":"13000"},{"menu":"카레 추가 (단품)","price":"5000"}],"avg_rating":4.3,"ai_score":92,"open_hour":"매일: 오전 11시 30분 - 오후 3시(라스트오더 14시),매일: 오후 5시 - 오후 9시(라스트오더 21시)","rep_photo":["20200307024245_photo1_d47a05bdd59e.jpg","20200304092505_photo1_81a1ac413d2c.jpg","20200304092505_photo2_81a1ac413d2c.jpg","20200303113031_photo1_9a1be0eb6f77.jpg","20200303113031_photo2_9a1be0eb6f77.jpg"],"menu_photo":["20200226125927_menu1_8e68deea3142.jpg","20200117164527_photo3_YltfTH9OOS0u.jpg","20191211042531_menu1_ee7b4fc27232.jpg"],"area":"대학로","r_like_count":767,"rep_food_keyword":["안심돈까스","돈까스"],"rep_keyword":["2019대표맛집","수요미식회","줄서서먹는","데이트"],"taste_rating":"4.1","price_rating":"3.4","service_rating":"3.7","visit_purpose":["점심식사","데이트","저녁식사","식사모임","가족외식"],"facility":["현장대기필요","배달가능","대형룸","주차불가","무료주차"],"atmosphere":["깔끔한","캐주얼한","고급스러운","시끌벅적한","푸짐한"]},"blog_data":[{"blog_title":"혜화 대학로 정돈 ∥ 2시간 웨이팅 후 먹은 안심 ＆ 등심 돈까스","blog_payload":"안녕하세요, 다나입니다. _( :⁍ 」 )_ 이 혜화 대학로 정돈에 다녀온 것은 12월 즈음인데 벌써 시간이 흘러 3월이 되어서야 포스팅을 하게 되었네요. 이때는 오랜만에 만난 친한 동생들과 함께 돈까스 집을 가게 되었는데, 한","blogger_name":"다가가길","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=bubring&logNo=221849123096&redirect=Dlog&widgetTypeCall=true","blog_date":"6일 전"},{"blog_title":"정돈 돈까스(대학로 본점)","blog_payload":"안녕하세요♀️ 오늘은 맛있는 돈까스집 하나 소개하려고 왔어요. 음식점명은 '정돈'입니다. 일본식 돈까스\/카레가 유명한 집이에요. 어쩌다 혜화역에 갈 일이 있어서 갔다가 배고파서 점심이나 먹고가자 라는 생각에","blogger_name":"블루마인드","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=chohee5133&logNo=221845901599&redirect=Dlog&widgetTypeCall=true","blog_date":"3월 10일"},{"blog_title":"대학로 맛집 - 대학로 정돈","blog_payload":"대학로 맛집 대학로 돈가스 대학로 돈까스 대학로 정돈 코로나 때문에 난리인데도 가는 맛집들은 맛집들마다 다 만석 11시반 오픈인데 오픈때가면 대기할 수도 있대서 11시에 가니 두번째로 줄서 있다가 입장","blogger_name":"찬♥후♥진","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=liveletdie&logNo=221841842877&redirect=Dlog&widgetTypeCall=true","blog_date":"3월 7일"}],"review_data":{"review_count":74,"review_list":[{"user_name":"젬JYEM","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20200304031440_dohnoh2074.jpg","user_review_count":3,"user_review_like_count":9,"review_like_count":3,"u_follower_count":0,"review_reg_time":"3월 7일","user_grade":"일반","review_txt":"오픈시간 맞춰서 갔더니 코로나 여파로 웨이팅없이 바로 들어갈 수 있었다. 나올때 보니 웨이팅이 생긴걸 보니 돼지런떤 보람이 있다싶었다ㅎㅅㅎ\n워어어어어어어낙 유명한 곳이라 웨이팅 엄두가 안나 계속 리스트에서 미뤘다가 드디어 갔는데 기대가 너무 컸던 걸까...? 등심이어서 그랬나..? 안심을 먹어봐야 되는걸까...? 카레를 시켰어야했나...? 먹는 내내 여러가지에 대한 의문이 들었고 반쯤 먹었을때부터 급격히 질리기 시작했다. 이런 수비드돈까스?류 자체가 조금 취향이 아닌것같기도하다. 결국 몇조각 남기고 나왔다. 너무느끼해..","r_rating":3,"r_taste_rating":3,"r_price_rating":4,"r_service_rating":4,"r_visit_purpose":"점심식사,데이트,저녁식사,식사모임,가족외식,혼밥,기념일,여자끼리,대학로 맛집,접대,대학로 돈까스,술모임","r_facility":"현장대기필요,배달가능,대형룸,주차불가,무료주차,포장가능","r_atmosphere":"깔끔한,캐주얼한,고급스러운,시끌벅적한,푸짐한,예쁜,숨은맛집,지역주민이 찾는,조용한,가성비좋은,서민적인,규모가큰,모던한,젊은사람이많은,유명함,경관\/야경이 좋은,유명 맛집","photo_generic":["20200307024245_photo1_d47a05bdd59e.jpg"],"photo_info":["20200307024245_photo1_d47a05bdd59e.jpg"],"ordered_food":"등심돈까스"},{"user_name":"jinyeah","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20200304113650_81a1ac413d2c.jpg","user_review_count":26,"user_review_like_count":56,"review_like_count":3,"u_follower_count":0,"review_reg_time":"3월 4일","user_grade":"일반","review_txt":"웨이팅이 아주 깁니다.. 항상 기본 30분 이상은 웨이팅이 있는듯. 혜화에서 가장 유명한 맛집. 저는 안심을 좋아하는 편인데 정돈은 안심보단 등심이 맛있었습니다. 안심은 엄청 부드럽고 기름기가 없어서 저한테는 조금 심심한 느낌..","r_rating":4,"r_taste_rating":4,"r_price_rating":3,"r_service_rating":3,"r_visit_purpose":"점심식사,데이트,저녁식사,식사모임,가족외식,혼밥,기념일,여자끼리,대학로 맛집,접대,대학로 돈까스,술모임","r_facility":"현장대기필요,배달가능,대형룸,주차불가,무료주차,포장가능","r_atmosphere":"깔끔한,캐주얼한,고급스러운,시끌벅적한,푸짐한,예쁜,숨은맛집,지역주민이 찾는,조용한,가성비좋은,서민적인,규모가큰,모던한,젊은사람이많은,유명함,경관\/야경이 좋은,유명 맛집","photo_generic":["20200304092505_photo1_81a1ac413d2c.jpg","20200304092505_photo2_81a1ac413d2c.jpg"],"photo_info":["20200304092505_photo1_81a1ac413d2c.jpg","20200304092505_photo2_81a1ac413d2c.jpg"],"ordered_food":"등심+안심 돈카츠,안심 돈카츠"
+		},{"business_id":449469
+		,"basic_data":{"name":"하카타분코","address":"서울특별시 마포구 상수동 93-28","telephone":"02-338-5536","longitude":"126.923760","latitude":"37.548910"},"additional_data":{"menu":[{"menu":"인라멘","price":"9000"},{"menu":"청라멘","price":"9000"},{"menu":"챠슈덮밥","price":"6000"},{"menu":"미니챠슈덮밥","price":"3000"},{"menu":"차돌단면","price":"12000"},{"menu":"공기밥, 사리","price":"1000"}],"avg_rating":3.7,"ai_score":77,"open_hour":"일요일: 오전 11시 30분 - 오전 2시 30분(02:00 라스트 오더),월-금,토: 오전 11시 30분 - 오전 3시(02:30 라스트 오더)","rep_photo":["20191107111554_photo1_a1600c8c0953.jpg","20191107111554_photo2_a1600c8c0953.jpg","20191107111554_photo3_a1600c8c0953.jpg","20191107111557_menu2_a1600c8c0953.jpg","20191030125351_photo1_81f97fbd9948.jpg"],"menu_photo":["20191107111557_menu1_a1600c8c0953.jpg","20191030125355_menu1_81f97fbd9948.jpg","20191017020342_menu1_6da16a2d49be.jpg"],"area":"홍대","r_like_count":914,"rep_food_keyword":["일본라멘","차슈덮밥"],"rep_keyword":["수요미식회","미식가","야식"],"taste_rating":"3.6","price_rating":"3.6","service_rating":"3.7","visit_purpose":["점심식사","저녁식사","혼밥","데이트","식사모임"],"facility":["현장대기필요","없음. 불친절만있ㅇ","애완동물동반","야외좌석(테라스)","무료주차"],"atmosphere":["캐주얼한","이국적\/이색적","서민적인","아담한","지역주민이 찾는"]},"blog_data":[{"blog_title":"[서울] #홍대 '하카타 분코'","blog_payload":"'하카타 분코' 한국에서 아마 '일본라멘' 1세대일 거예요~ 여기 생긴지 엄청 오래됐거든요~ 여기 라멘도 먹어봤지만.. 제가 오늘 다룰 건 '차돌 단면'이에요~ '차돌 단면' '밤 10시' 이후에 주문 가능한 '차돌 단면'입니다.","blogger_name":"대한민국의 모든 길","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=darkaxe01&logNo=221806054971&redirect=Dlog&widgetTypeCall=true","blog_date":"3월 7일"},{"blog_title":"진한 돼지고기 육수가 일품인 라멘 맛집","blog_payload":"갑자기 추워진 요즘 날씨, 뜨끈한 국물이 자주 당기는 요즘입니다.뜨끈한 국물과 함께라면 추운 날씨도 거뜬히 이겨낼 수 있을 것 같기 때문입니다. 여러 국물 요리들 중 오늘은 라멘집을 소개하려합니다. Previous image Next","blogger_name":"강남아인스교정과치과","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=yun830922&logNo=221823814203&redirect=Dlog&widgetTypeCall=true","blog_date":"2월 25일"},{"blog_title":"하카타분코","blog_payload":"홍대 인근 라멘 맛집 하카타분코입니다. 지하철로는 상수역에서 더 가까운 곳. 밤늦게까지 골목길에 긴 줄이 늘어서 있는 곳인데 요즘은 어딜 가나 한산하네요. 그 덕에 줄 서지 않고 먹을 수 있습니다. 블루리본을 여러 개","blogger_name":"부동산과 문화예술 연구소 \"부메랑\"","blog_url":"https:\/\/blog.naver.com\/PostView.nhn?blogId=prospering&logNo=221817522971&redirect=Dlog&widgetTypeCall=true","blog_date":"2월 20일"}],"review_data":{"review_count":58,"review_list":[{"user_name":"연금술샤","user_profile_url":null,"user_review_count":2,"user_review_like_count":2,"review_like_count":0,"u_follower_count":0,"review_reg_time":"1월 4일","user_grade":"일반","review_txt":"솔직후기에요.\n\n아마.. 라멘 좀 드셔보셨다는 분들에겐 제 후기에 무릎을 탁 치실겁니다.\n\n우선 저는 일본에서 4년을 살다왔고 늘 맛집을 찾아도 더 맛있는 집을 찾아다니는 하이에나에요.\n\n면 : 일본의 대형마트에서 파는 이치란 보급품면과 90%이상 일치하는 얇은 건면 스타일\n= 저는 그저그랬어요.\n\n국물 : 일본 차취할때 마트에서 사서 부은 전문 라멘브랜드 봉지 국물맛 그 이상 그 이하도 아님. 신주쿠거리에 유명한 진한 국물보다 2배는 기름기도 없고... 인과 홍이 기름기 차이가 크다고 설명에 적혀있으나... 그다지... 차이 없다고 보셔도 됩니다. 그리고 짭니다. 시오라멘도 아닌데... 일본에서도 차슈라멘에 이런 짠맛은 안내요. 일본이 무조건 짠게 아니란 말입니다.\n= 너무 별로\n\n차슈 : xx였던 차슈... 우선 일본에서의 차슈는 푸딩처럼 부드러운 삶은 고기를 말한다. 여기서 파는 차슈는 얇은  냉동삼겹살.. 그것도 딱딱한 물렁뼈가 붙어있는  놈을 그냥 겉만 구워서 나온다. 아마 비린내는 차슈에서 다 나온다고보면 된다.\n= 먹다 속에서 욕나올수도\n\n미니차슈동 : 시키지 마세요. 이건 진심 한입먹고 안먹고 그냥 두고 나옴. 차슈밑에 깔린 간장절인 딱딱한 밥이라니.....\n= 제일 최악\n\n분위기 : 주방에 가깝게 앉아 있었어가지고 서빙하시는 분이 다른 손님 한분이 겉옷 옆자리에 놨다고 욕을하는데.. 문신 잔뜩하고 승질내니까 먹다가 쫄뻔했네요. 애초에 일본처럼 소지품 담아두는 바구니가 구비되어있지도 않으면서... 여긴 손님보다 서빙과 주방사람들이 떠드는 소리가 더큰곳입니다 ㅎㅎ","r_rating":5,"r_taste_rating":2,"r_price_rating":3,"r_service_rating":2,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,남자끼리,간식,불친절,여자끼리,돈코츠라멘,기념일,하카타라멘,접대,라멘,야식,매운라멘,모임,바리카타,술모임,브런치","r_facility":"현장대기필요,없음. 불친절만있ㅇ,애완동물동반,야외좌석(테라스),무료주차","r_atmosphere":"캐주얼한,이국적\/이색적,서민적인,아담한,지역주민이 찾는,가성비좋은,깔끔한,조용한,시끌벅적한,젊은사람이많은,심야영업,줄서서먹는,일본식,숨은맛집,위협적,푸짐한,일본","photo_generic":[],"photo_info":[],"ordered_food":"인라멘,홍라멘,미니차슈동"},{"user_name":"BB","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20181006025351_hsyou8829.jpg","user_review_count":22,"user_review_like_count":8,"review_like_count":1,"u_follower_count":0,"review_reg_time":"2019년 11월 7일","user_grade":"일반","review_txt":"돈코츠라멘하면 역시 하카타분코! 꼭 마늘을 다져 넣어야 해요 영락없는 한국인인가봐요😂 그래서 진한 돈코츠라멘에 알싸한 마늘향이 퍼지는 이 곳의 돈코츠라멘이 항상 생각나나봐요. 양도 많은 편입니다!","r_rating":4,"r_taste_rating":4,"r_price_rating":4,"r_service_rating":4,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,남자끼리,간식,불친절,여자끼리,돈코츠라멘,기념일,하카타라멘,접대,라멘,야식,매운라멘,모임,바리카타,술모임,브런치","r_facility":"현장대기필요,없음. 불친절만있ㅇ,애완동물동반,야외좌석(테라스),무료주차","r_atmosphere":"캐주얼한,이국적\/이색적,서민적인,아담한,지역주민이 찾는,가성비좋은,깔끔한,조용한,시끌벅적한,젊은사람이많은,심야영업,줄서서먹는,일본식,숨은맛집,위협적,푸짐한,일본","photo_generic":["20191107111554_photo1_a1600c8c0953.jpg","20191107111554_photo2_a1600c8c0953.jpg","20191107111554_photo3_a1600c8c0953.jpg","20191107111557_menu2_a1600c8c0953.jpg"],"photo_info":["20191107111554_photo1_a1600c8c0953.jpg","20191107111554_photo2_a1600c8c0953.jpg","20191107111554_photo3_a1600c8c0953.jpg","20191107111557_menu2_a1600c8c0953.jpg"],"ordered_food":"인라멘,청라멘"},{"user_name":"퍼니펀","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20190523123605_81f97fbd9948.jpg","user_review_count":141,"user_review_like_count":456,"review_like_count":3,"u_follower_count":13,"review_reg_time":"2019년 10월 30일","user_grade":"일반","review_txt":"차돌라멘이 요즘 핫하다해서 갔다가\n밤10시 이후에만 판다하여, \n기본라멘 먹고 \n\n두번째 방문해서 드디어 먹었습니다 차돌라멘.\n실망이 큽니다... 너무 꾸덕하고 맵고 너무 기름져요...비추입니다","r_rating":3,"r_taste_rating":3,"r_price_rating":3,"r_service_rating":3,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,남자끼리,간식,불친절,여자끼리,돈코츠라멘,기념일,하카타라멘,접대,라멘,야식,매운라멘,모임,바리카타,술모임,브런치","r_facility":"현장대기필요,없음. 불친절만있ㅇ,애완동물동반,야외좌석(테라스),무료주차","r_atmosphere":"캐주얼한,이국적\/이색적,서민적인,아담한,지역주민이 찾는,가성비좋은,깔끔한,조용한,시끌벅적한,젊은사람이많은,심야영업,줄서서먹는,일본식,숨은맛집,위협적,푸짐한,일본","photo_generic":["20191030125351_photo1_81f97fbd9948.jpg","20191030125351_photo2_81f97fbd9948.jpg","20191030125351_photo3_81f97fbd9948.jpg"],"photo_info":["20191030125351_photo1_81f97fbd9948.jpg","20191030125351_photo2_81f97fbd9948.jpg","20191030125351_photo3_81f97fbd9948.jpg"],"ordered_food":"인라멘,청라멘,차돌라멘"},{"user_name":"맛에환장","user_profile_url":"https:\/\/s3-ap-northeast-1.amazonaws.com\/dc-user-profile-photo\/profilephoto_20190827082545_azulene.jpg","user_review_count":59,"user_review_like_count":100,"review_like_count":1,"u_follower_count":3,"review_reg_time":"2019년 10월 17일","user_grade":"일반","review_txt":"다진마늘을 첨가함으로써 완성되는 맛. 추운날 좋다. 다만 양은 적다.","r_rating":3,"r_taste_rating":4,"r_price_rating":2,"r_service_rating":3,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,남자끼리,간식,불친절,여자끼리,돈코츠라멘,기념일,하카타라멘,접대,라멘,야식,매운라멘,모임,바리카타,술모임,브런치","r_facility":"현장대기필요,없음. 불친절만있ㅇ,애완동물동반,야외좌석(테라스),무료주차","r_atmosphere":"캐주얼한,이국적\/이색적,서민적인,아담한,지역주민이 찾는,가성비좋은,깔끔한,조용한,시끌벅적한,젊은사람이많은,심야영업,줄서서먹는,일본식,숨은맛집,위협적,푸짐한,일본","photo_generic":["20191017020340_photo1_6da16a2d49be.jpg","20191017020340_photo2_6da16a2d49be.jpg"],"photo_info":["20191017020340_photo1_6da16a2d49be.jpg","20191017020340_photo2_6da16a2d49be.jpg"],"ordered_food":"인라멘"
+		},{"user_name":"묻고떠블로가","user_profile_url":null,"user_review_count":1,"user_review_like_count":2,"review_like_count":2,"u_follower_count":0,"review_reg_time":"2019년 10월 1일","user_grade":"일반","review_txt":"","r_rating":5,"r_taste_rating":4,"r_price_rating":3,"r_service_rating":4,"r_visit_purpose":"점심식사,저녁식사,혼밥,데이트,식사모임,가족외식,남자끼리,간식,불친절,여자끼리,돈코츠라멘,기념일,하카타라멘,접대,라멘,야식,매운라멘,모임,바리카타,술모임,브런치","r_facility":"현장대기필요,없음. 불친절만있ㅇ,애완동물동반,야외좌석(테라스),무료주차","r_atmosphere":"캐주얼한,이국적\/이색적,서민적인,아담한,지역주민이 찾는,가성비좋은,깔끔한,조용한,시끌벅적한,젊은사람이많은,심야영업,줄서서먹는,일본식,숨은맛집,위협적,푸짐한,일본","photo_generic":["20191001080537_photo1_c4b996d52694.jpg","20191001080537_photo2_c4b996d52694.jpg"],"photo_info":["20191001080537_photo1_c4b996d52694.jpg","20191001080537_photo2_c4b996d52694.jpg"]
+		,"ordered_food":"인라멘,차돌단면"}]}
+		}
+	]
+		
