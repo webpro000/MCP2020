@@ -27,8 +27,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class Item {
     
-              // 속성
     private int businessId = 0;
+              // 속성    
+    
+    String name = null;
+    
+    String address = null;
+    
+    String telephone =  null;
+    
+    float longitude = 0;
+    
+    float latitude = 0;
 
     /**
      * @return the businessId
@@ -43,8 +53,77 @@ public class Item {
     public void setBusinessId(int businessId) {
         this.businessId = businessId;
     }
-    
-    
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     * @return the telephone
+     */
+    public String getTelephone() {
+        return telephone;
+    }
+
+    /**
+     * @param telephone the telephone to set
+     */
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    /**
+     * @return the longitude
+     */
+    public float getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * @param longitude the longitude to set
+     */
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    /**
+     * @return the latitude
+     */
+    public float getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * @param latitude the latitude to set
+     */
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
     
     
 }
